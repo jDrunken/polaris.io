@@ -20,7 +20,7 @@ input[type='submit'] {
     box-sizing:border-box;
     text-align: center;
     font-family:inherit;
-    border-radius:2px;
+    border-radius:0;
     padding:0;
 
     &:first-letter {
@@ -78,6 +78,12 @@ input[type='submit'] {
         border-color:#fff;
         color:#fff;
         background-color:transparent;
+    }
+
+    &.white_darkgray {
+        background-color:#4a4a4a;
+        border-color:#4a4a4a;
+        color:#fff;
     }
 }
 

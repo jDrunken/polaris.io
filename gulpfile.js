@@ -48,15 +48,15 @@ var gulp              = require('gulp')
 // 환경설정
 var path = {
     source : {
-        root     : './source',
-        style    : './source/style',
-        js       : './source/js',
-        template : './source',
-        image    : './source/image',
-        conf     : './source/conf',
-        html     : './source/html'
+        root     : 'source',
+        style    : 'source/style',
+        js       : 'source/js',
+        template : 'source',
+        image    : 'source/image',
+        conf     : 'source/conf',
+        html     : 'source/html'
     },
-    deploy : './deploy'
+    deploy : 'deploy'
 };
 
 
@@ -139,6 +139,10 @@ gulp.task('convert:sass:sourcemap', function () {
     return gulp.src(path.source.style + '/**/style.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        })
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'ie 11'],
             expand: true,

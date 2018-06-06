@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+
+article .advantage {
+    div.relationship_diagram {
+        overflow:hidden;
+        width:720px;
+        height:444px;
+    }
+
+    ul {
+        margin:0;
+        padding:0;
+        overflow:hidden;
+
+        li {
+            margin:0;
+            padding:0;
+            list-style-type:none;
+            box-sizing:border-box;
+            float:left;
+            width:calc(100% / 3);
+            height:160px;
+
+            h3 {
+                font-size:rem(16);
+                font-family:$em-font;
+                font-weight:600;
+                color:#4a4a4a;
+                text-align:center;
+            }
+
+            p {
+                text-align:center;
+                color:#808080;
+                line-height:1.6;
+                font-size:rem(14);
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@charset 'UTF-8';
+
+article .team {
+    h2 {
+        font-size:rem(28);
+        color:#4a4a4a;
+        font-weight:bold;
+
+        &:first-letter {
+            text-transform:uppercase;
+        }
+    }
+
+    ul, li {
+        padding:0;
+        margin:0;
+        list-style-type:none;
+    }
+
+    ul {
+        overflow:hidden;
+
+        li {
+            // 고정 넓이에서 갯수가 변화하는 형식을 취한다.
+            width:225px;
+            height:414px;
+            float:left;
+        }
+    }
+}

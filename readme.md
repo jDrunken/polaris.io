@@ -1,6 +1,6 @@
-# eosys.io static site builder
+# polaris.io static site builder
 
-gulp.js 기반의 task running으로 eosys.io 사이트를 building 합니다.
+gulp.js 기반의 task running으로 polaris.io 사이트를 building 합니다.
 
 ## 개발/배포환경 설정
 
@@ -25,27 +25,4 @@ gulp.js 기반의 task running으로 eosys.io 사이트를 building 합니다.
 
 > gulp deploy
 # gh-pages에 수정된 사항을 push합니다. github page 배포용입니다.  
-```
-  
-  
---------------------------------------------------  
-  
-  
-### bp.json 추가하는 방법  
-  
-아래와 같이 **root**에 **`bp.json` / `bp.${chain_id}.json`** 이 **위치**해야 합니다.
-```
---/
-----index.html
-----bp.json
-----bp.${chain_id}.json
-```
-
-추가를 원하는 파일을 `./source/conf/` 디렉토리에 추가합니다.  
-이 디렉토리는 하위 모든 파일을 root로 복사하게 설정해 두었습니다.
-
-원하는 파일이 추가되었으면 배포를 진행합니다.
-
-``` bash  
-> gulp deploy
 ```

@@ -15,9 +15,15 @@
 @import 'input.scss';
 @import 'shape-interaction.bugger.scss';
 
-// details
+// layout
 @import 'layout.scss';
+
+// details
 @import 'header.scss';
-@import 'article.scss';
-@import 'mailchimp.scss';
-@import 'footer.scss';
+
+// 여기부턴 사이트에 특화된 스타일들
+@import 'article.summary.scss';
+@import 'article.linkgroup.scss';
+@import 'article.about.scss';
+@import 'article.advantage.scss';
+@import 'article.team.scss';

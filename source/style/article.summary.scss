@@ -1,0 +1,26 @@
+@charset 'UTF-8';
+article .summary {
+    height:720px;
+
+    h2 {
+        font-size:rem(44);
+        line-height:1.23;
+        font-family:$em-font;
+        font-weight:600;
+        color:#4a4a4a;
+    }
+
+    a.button.middle {
+        font-size:rem(20);
+        height:58px;
+        line-height:58px;
+        font-family:$em-font;
+        width:224px;
+        text-align:center;
+        font-weight:300;
+    }
+
+    .btn_area {
+        text-align:left;
+    }
+}
