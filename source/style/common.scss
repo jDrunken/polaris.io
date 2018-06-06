@@ -1,0 +1,12 @@
+// 섹션 타이틀
+h2 {
+    font-size:rem(28);
+    font-family:$em-font;
+    color:#4a4a4a;
+    font-weight:bold;
+
+    &:first-letter {
+        text-transform:uppercase;
+    }
+}
+

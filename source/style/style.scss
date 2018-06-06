@@ -18,6 +18,9 @@
 // layout
 @import 'layout.scss';
 
+// 공통 스타일
+@import 'common.scss';
+
 // details
 @import 'header.scss';
 
@@ -26,4 +29,4 @@
 @import 'article.linkgroup.scss';
 @import 'article.about.scss';
 @import 'article.advantage.scss';
-@import 'article.team.scss';
+@import 'article.team_advisor.scss';
