@@ -1,0 +1,97 @@
+@charset 'UTF-8';
+
+article .faq {
+    padding-top:200px;
+
+    position:relative;
+
+    h3 {
+        @include screen_reader();
+    }
+
+    $padding_hr : 81px;
+    $padding_right : $padding_hr + 38px;
+
+    dl {
+        margin-top:40px;
+    }
+
+    dt {
+        padding:16px $padding_right 16px $padding_hr;
+        background-color:#f2f5fc;
+        position:relative;
+
+        button {
+            width:16px;
+            height:16px;
+
+            @include ir();
+
+            background:url('../image/icon-close-info@3x.png') center center no-repeat;
+            background-size:contain;
+
+            position:absolute;
+            right:$padding_hr;
+            top:50%;
+            transform:translateY(-50%);
+        }
+    }
+
+    dd {
+        font-size:rem(14);
+        color:#6a6a6a;
+        line-height:1.6;
+        padding:0 $padding_hr 16px;
+        font-weight:300;
+
+        display:none;
+    }
+
+    dt.viewing, dd {
+        background-color:#e6ebf5;
+    }
+
+    dt.viewing + dd {
+        display:block;
+    }
+
+
+    // 인터널 링크
+    div.link.container {
+        display:flex;
+
+        a {
+            text-align:center;
+            display:inline-block;
+            width:33.3%;
+            padding:32px 0;
+            color:#687699;
+            position:relative;
+            line-height:1.1;
+
+            &:after {
+                content:'';
+                display:block;
+                height:2px;
+                background-color:#e6ebf5;
+
+                position:absolute;
+                bottom:0;
+                left:0;
+                right:0;
+            }
+
+            &.viewing {
+                font-family:$em-font;
+                font-weight:600;
+                color:#4a4a4a;
+
+                &:after {
+                    background-color:transparent;
+                    background-image: linear-gradient(to right, #27b9fb, #b827fb);
+
+                }
+            }
+        }
+    }
+}

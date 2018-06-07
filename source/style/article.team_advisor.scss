@@ -1,28 +1,70 @@
 @charset 'UTF-8';
+article .team {
+    padding-top:200px;
+}
 
+article .advisor {
+    padding:200px 0;
+}
 article .team,
 article .advisor {
+
     ul, li {
         padding:0;
         margin:0;
         list-style-type:none;
     }
 
-    ul {
+    > ul {
         overflow:hidden;
+        margin-left:-12px;
 
-        li {
+        > li {
             // 고정 넓이에서 갯수가 변화하는 형식을 취한다.
+            margin-top:48px;
             width:225px;
             height:414px;
             float:left;
             text-align:center;
+            background-color:#f2f5fc;
+            margin-left:12px;
+
+            p  {
+                margin:16px 0 0;
+                color:#808080;
+                font-size:rem(14);
+                font-weight:300;
+                padding:0 25px;
+            }
+        }
+    }
+
+    img {
+        background:#aaa;
+        display:block;
+        width:225px;
+        height:141px;
+        position:relative;
+
+        &:before {
+            content:'';
+            display:block;
+            position:absolute;
+            width:100%;
+            height: 2px;
+            background-image: linear-gradient(to right, #27b9fb, #b827fb);
+            bottom:0;
+            left:0;
         }
     }
 
     h3 {
 
         text-transform:uppercase;
+        font-size:rem(16);
+        font-weight:600;
+        color:#4a4a4a;
+        font-family:$em-font;
 
         &:before {
             content:attr(data-role);
@@ -31,29 +73,32 @@ article .advisor {
             font-size:rem(14);
             color:#808080;
             text-transform:Capitalize;
+            margin:18px 0 4px;
         }
-
-        img {
-            background:#aaa;
-            display:block;
-            width:225px;
-            height:141px;
-            position:relative;
-
-            &:before {
-                content:'';
-                display:block;
-                position:absolute;
-                width:100%;
-                height: 2px;
-                background-image: linear-gradient(to right, #27b9fb, #b827fb);
-                bottom:0;
-                left:0;
-            }
-        }
-
     }
 
-    p {
+    a.ci {
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center center;
+        display:inline-block;
+        margin:24px 12px 0;
+        width:20px;
+        height:20px;
+
+        @include ir();
+
+        &.facebook {
+            width:11px;
+            background-image:url('../image/icon-facebook@3x.png')
+        }
+
+        &.telegram {
+            background-image:url('../image/icon-telegram-footer@3x.png')
+        }
+
+        &.twitter {
+            background-image:url('../image/icon-twitter-footer@3x.png')
+        }
     }
 }

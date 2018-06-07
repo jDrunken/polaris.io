@@ -2,9 +2,22 @@
 
 footer {
     box-sizing:border-box;
-    background-color:#333;
     color:#fff;
     position:relative;
+
+    padding:81px 0;
+
+    &:before {
+        content:'';
+        display:block;
+        position:absolute;
+        top:0;
+        left:-200%;
+        right:-200%;
+        bottom:0;
+        background-color:#333;
+        z-index:-1;
+    }
 
     @include media_query($device_small) {
         padding:48px 20px;

@@ -1,6 +1,22 @@
 @charset 'UTF-8';
 
 article .advantage {
+    padding:200px 0;
+    position:relative;
+
+    // bg-color
+    &:before {
+        content:'';
+        position:absolute;
+        top:0;
+        left:-200%;
+        right:-200%;
+        bottom:0;
+        display:block;
+        background-color:#f2f5fc;
+        z-index:-1;
+    }
+
     div.relationship_diagram {
         overflow:hidden;
         width:720px;
@@ -14,12 +30,13 @@ article .advantage {
 
         li {
             margin:0;
-            padding:0;
+            padding:0 7px;
             list-style-type:none;
             box-sizing:border-box;
             float:left;
             width:calc(100% / 3);
             height:160px;
+            margin-top:48px;
 
             h3 {
                 font-size:rem(16);

@@ -23,6 +23,7 @@
 
 // details
 @import 'header.scss';
+@import 'footer.scss';
 
 // 여기부턴 사이트에 특화된 스타일들
 @import 'article.summary.scss';
@@ -30,3 +31,6 @@
 @import 'article.about.scss';
 @import 'article.advantage.scss';
 @import 'article.team_advisor.scss';
+@import 'article.media.scss';
+@import 'article.faq.scss';
+@import 'article.more-info.scss';

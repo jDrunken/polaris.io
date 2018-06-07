@@ -6,12 +6,55 @@ article .link_group {
     align-items:center;
     justify-content:center;
 
+    position:relative;
+
+    // 배경색 설정
+    &:before {
+        content:'';
+        display:block;
+        background-color:#e0e4ea;
+
+        position:absolute;
+        top:0;
+        left:-200%;
+        right:-200%;
+        bottom:0;
+        z-index:-1;
+    }
+
     a {
         margin-left:66px;
         display:inline-block;
 
         &:first-child {
             margin-left:0;
+        }
+    }
+
+    a.ci {
+            background-repeat:no-repeat;
+            background-size:cover;
+            @include ir();
+
+        &.ethereum {
+            width:180px;
+            height:46px;
+            background-image:url('../image/partner-ethereum@3x.png');
+        }
+        &.consensys {
+            width:180px;
+            height:40px;
+            background-image:url('../image/partner-conensys@3x.png');
+        }
+        &.coindesk {
+            width:160px;
+            height:32px;
+            background-image:url('../image/partner-coindesk@3x.png');
+        }
+        &.cointelegraph {
+            width:228px;
+            height:46px;
+            background-image:url('../image/partner-cointelegraph@3x.png');
         }
     }
 }

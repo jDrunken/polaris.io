@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+article .more_info {
+    margin-top:48px;
+
+    h2 {
+        text-align:center;
+        font-weight:600;
+    }
+
+    div.btn_area {
+        margin-top:48px;
+
+        a.middle.button {
+            width:224px;
+            height:58px;
+            line-height:56px;
+            font-size:rem(20);
+            font-family:$em-font;
+            font-weight:500;
+        }
+    }
+
+
+}

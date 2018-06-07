@@ -1,6 +1,24 @@
 @charset 'UTF-8';
+
+
 article .summary {
     height:720px;
+    position:relative;
+
+    &:before {
+        content:'';
+        z-index:-1;
+        position:absolute;
+        top:0;
+        left:-200%;
+        bottom:0;
+        right:-200%;
+        background-image: linear-gradient(to right, #ccd0da 54%, #eaeffa 68%);
+    }
+
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
 
     h2 {
         font-size:rem(44);
@@ -8,6 +26,35 @@ article .summary {
         font-family:$em-font;
         font-weight:600;
         color:#4a4a4a;
+
+        //여기에 polaris 배경 애니메이션 추가해야지
+        &:before {
+            content:'';
+            position:absolute;
+            width:240px;
+            height:240px;
+            background:url('../image/polaris-simbol-c@3x.png') 0 0 no-repeat;
+            background-size:cover;
+        }
+
+        // 동심원
+        &:after {
+            content:'';
+            position:absolute;
+
+            z-index:-1;
+
+            top:0;
+            left:0;
+
+            width:600px;
+            height:600px;
+
+            // background:url('../image/background-web@3x.png') center center no-repeat;
+            // background: radial-gradient(#e7eaf2 10%, #f00 20%);
+
+            background-size:cover;
+        }
     }
 
     a.button.middle {
@@ -18,6 +65,8 @@ article .summary {
         width:224px;
         text-align:center;
         font-weight:300;
+
+        margin-top:40px;
     }
 
     .btn_area {

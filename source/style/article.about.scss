@@ -1,12 +1,39 @@
 @charset 'UTF-8';
 
 article .about {
-    height:661px;
+    padding-top:200px;
+    padding-bottom:200px;
+    position:relative;
+
+    // bg-color
+    &:before {
+        content:'';
+        position:absolute;
+        top:0;
+        left:-200%;
+        right:-200%;
+        bottom:0;
+        display:block;
+        background-color:#f2f5fc;
+        z-index:-1;
+    }
+
+    // eos node image
+    h2 + img {
+        width:160px;
+        height:273px;
+
+        position:absolute;
+        right:79px;
+        top:50%;
+        transform:translateY(-50%);
+    }
+
 
     $all_dt_width:341px;
 
-
     dl {
+        margin-top:56px;
         position:relative;
         width:376px;
 
@@ -25,7 +52,7 @@ article .about {
                     content:'';
                     display:block;
                     height:2px;
-                    background-color:#f2f5fc;
+                    background-color:#e6ebf5;
 
                     position:absolute;
                     bottom:0;
@@ -70,9 +97,8 @@ article .about {
             font-weight:300;
             color:#4a4a4a;
             line-height:1.6;
-            min-height:100px;
             visibility:hidden;
-            top:70px;
+            top:90px;
             display:block;
         }
 

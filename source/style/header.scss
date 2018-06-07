@@ -22,7 +22,8 @@ header h1 a {
     width:150px;
     height:23px;
     background:url('../image/polaris-logo-c@3x.png');
-    background-size:contain;
+    background-size:150px 23px;
+    background-repeat:no-repeat;
     display:block;
 
     @include ir();

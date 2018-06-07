@@ -85,6 +85,12 @@ input[type='submit'] {
         border-color:#4a4a4a;
         color:#fff;
     }
+
+    &.darkgray_transparent {
+        background-color:transparent;
+        border-color:#4a4a4a;
+        color:#4a4a4a;
+    }
 }
 
 // background image
