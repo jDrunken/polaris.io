@@ -13,7 +13,34 @@ article .summary {
         left:-200%;
         bottom:0;
         right:-200%;
-        background-image: linear-gradient(to right, #ccd0da 54%, #eaeffa 68%);
+
+        background-image: radial-gradient(
+                circle at 54% center,
+                #e7eaf2 174px,
+                #dce0eb 175px,
+
+                #dce0eb 323px,
+                #d1d5df 325px,
+
+                #e6ebf6 480px,
+                #e1e6f0 492px,
+                transparent 493px
+            ), linear-gradient(to right, #ccd0da 30%, #eaeffa 75%);
+
+        background-position:center,left,left;
+        background-repeat:no-repeat;
+    }
+
+    &:after {
+        content:'';
+        left:calc(54% + 30px);
+        top:50%;
+        transform:translateY(-50%);
+        width:240px;
+        height:240px;
+        position:absolute;
+        background: url('../image/polaris-simbol-c@3x.png') center center no-repeat;
+        background-size:cover;
     }
 
     display:flex;
@@ -24,37 +51,8 @@ article .summary {
         font-size:rem(44);
         line-height:1.23;
         font-family:$em-font;
-        font-weight:600;
+        font-weight:400;
         color:#4a4a4a;
-
-        //여기에 polaris 배경 애니메이션 추가해야지
-        &:before {
-            content:'';
-            position:absolute;
-            width:240px;
-            height:240px;
-            background:url('../image/polaris-simbol-c@3x.png') 0 0 no-repeat;
-            background-size:cover;
-        }
-
-        // 동심원
-        &:after {
-            content:'';
-            position:absolute;
-
-            z-index:-1;
-
-            top:0;
-            left:0;
-
-            width:600px;
-            height:600px;
-
-            // background:url('../image/background-web@3x.png') center center no-repeat;
-            // background: radial-gradient(#e7eaf2 10%, #f00 20%);
-
-            background-size:cover;
-        }
     }
 
     a.button.middle {

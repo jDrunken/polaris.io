@@ -171,8 +171,8 @@
 
 
 
-// // --------------------------------------------------------------------------------
-// // hash location + smooth scrolling
+// --------------------------------------------------------------------------------
+// hash location + smooth scrolling
 // // 모든 anchor에 이벤트 바인딩하자. internal link로 판명될 경우 smooth scrolling 처리
 // // 최초 로딩,URL에서 hash가 변경될 경우 smooth scrolling 하지 않기로
 // // --------------------------------------------------------------------------------
@@ -227,24 +227,36 @@
 //     });
 
 
-//     $(function (){
-//         // 스크롤 위치에 따른 GNB color changing (by class binding)
-//         function headerInteraction (target,window,wall) {
-//             var target = $(target)
-//             ,   scrollPosition = parseInt($(window).scrollTop())
-//             ,   changeScrollPosition = parseInt($(wall).outerHeight())
-//             ;
+    $(function (){
+        // 스크롤 위치에 따른 GNB color changing (by class binding)
+        function headerInteraction (target,window,wall) {
+            var target = $(target)
+            ,   scrollPosition = parseInt($(window).scrollTop())
+            ,   changeScrollPosition = (function (wall){
+                    if (wall.length <= 1) {
+                        return parseInt($(wall).outerHeight());
+                    } else {
+                        var sum = 0;
+                        for (i in wall) {
+                            sum = sum + parseInt($(wall[i]).outerHeight());
+                        }
 
-//             scrollPosition > changeScrollPosition - 40 ?  target.addClass('invert') : target.removeClass('invert');
-//         }
+                        return sum;
+                    }
+                })(wall)
+            ;
 
-//         // 로딩시 바인딩
-//         headerInteraction($('#header'),$(window),$('#summary'))
 
-//         $(document).on('scroll', function(e) {
-//             headerInteraction($('#header'),$(window),$('#summary'))
+            scrollPosition > changeScrollPosition  ?  target.addClass('invert') : target.removeClass('invert');
+        }
 
-//         });
+        // 로딩시 바인딩
+        headerInteraction($('#header'),$(window),$('#summary'))
+
+        $(document).on('scroll', function(e) {
+            headerInteraction($('#header'),$(window),[$('#summary'),$('#linkGroup')]);
+
+        });
         
 //         // 스크롤 위치에 따라서 link에 클래스 바인딩을 한다.
 //         var sectionHeight = (function (sectionGroup) {
@@ -288,7 +300,7 @@
 //                 }
 //             }
 //         });
-//     });
+    });
 // })(jQuery);
 
 

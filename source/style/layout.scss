@@ -4,17 +4,15 @@ article .link_group {
         display:inline-block;
     }
 }
-body {
-    overflow-x:hidden;
-    overflow-y:auto;
-}
 
 // layout
 header,
-article,
 footer {
     margin:0 auto;
-    max-width: 946px;
+
+    > .wrapper {
+        max-width: 946px;
+    }
 }
 
 
@@ -23,6 +21,10 @@ article {
 
     > section {
         box-sizing:border-box;
+
+        > .wrapper {
+            margin:0 auto;
+        }
     }
 }
 

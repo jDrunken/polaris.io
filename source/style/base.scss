@@ -12,12 +12,12 @@ body {
     word-break: normal;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    overflow-x:hidden;
 }
 
 sub,sup {
     font-family:inherit;
 }
-
 
 // for screen reader
 .skip_nav {

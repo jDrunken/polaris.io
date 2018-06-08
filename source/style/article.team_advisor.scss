@@ -15,7 +15,7 @@ article .advisor {
         list-style-type:none;
     }
 
-    > ul {
+    ul {
         overflow:hidden;
         margin-left:-12px;
 
@@ -29,12 +29,21 @@ article .advisor {
             background-color:#f2f5fc;
             margin-left:12px;
 
+            position:relative;
+
             p  {
                 margin:16px 0 0;
                 color:#808080;
                 font-size:rem(14);
                 font-weight:300;
                 padding:0 25px;
+            }
+
+            p:last-child {
+               position:absolute;
+               bottom:24px;
+               left:0;
+               right:0;
             }
         }
     }

@@ -8,14 +8,16 @@ header {
     left:0;
     right:0;
     z-index:10;
-    overflow:hidden;
 
     //device-max
-    height:80px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    .wrapper {
+        margin:0 auto;
+        height:80px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
 }
 
 header h1 a {
@@ -32,7 +34,7 @@ header h1 a {
 nav {
     a {
         display:inline-block;
-        font-size:rem(24);
+        font-size:rem(16);
         font-family:$em_font;
         color:#808080;
         font-weight:200;
@@ -41,9 +43,15 @@ nav {
         &:first-child {
             margin-left:0;
         }
+
+        &:hover {
+            font-weight:300;
+            color:#000;
+        }
+
     }
 
-    // 항상 한국어가 먼저 있을 것이므로
+    // 항상 한국어가 먼저 있을 것이므로 경계선 처리는 한국어에
     a.lang.ko {
         margin-left:48px;
         padding-left:48px;
@@ -64,8 +72,43 @@ nav {
 }
 
 
+// 언어별 강조
 :lang(ko) .lang.ko,
 :lang(en) .lang.en {
     color:#000;
     font-weight:600;
+
 }
+
+header.invert {
+
+    &:before {
+        content:'';
+        top:0;
+        bottom:0;
+        left:-200%;
+        right:-200%;
+        background-color:#4a4a4a;
+        position:absolute;
+        z-index:-1;
+    }
+
+    nav a {
+        color:#808080;
+
+        &:hover {
+            color:#fff;
+        }
+    }
+
+    h1 a {
+        background-image:url('../image/polaris-logo-gray@3x.png');
+    }
+}
+
+:lang(ko) .invert .lang.ko,
+:lang(en) .invert .lang.en {
+    color:#fff;
+    font-weight:600;
+}
+

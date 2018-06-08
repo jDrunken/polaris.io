@@ -17,9 +17,11 @@ article .faq {
     }
 
     dt {
-        padding:16px $padding_right 16px $padding_hr;
+        padding:32px $padding_right 32px $padding_hr;
         background-color:#f2f5fc;
         position:relative;
+        color:#6a6a6a;
+        line-height:1.6;
 
         button {
             width:16px;
@@ -27,7 +29,7 @@ article .faq {
 
             @include ir();
 
-            background:url('../image/icon-close-info@3x.png') center center no-repeat;
+            background:url('../image/icon-open-info@3x.png') center center no-repeat;
             background-size:contain;
 
             position:absolute;
@@ -41,7 +43,7 @@ article .faq {
         font-size:rem(14);
         color:#6a6a6a;
         line-height:1.6;
-        padding:0 $padding_hr 16px;
+        padding:0 $padding_hr 32px;
         font-weight:300;
 
         display:none;
@@ -49,6 +51,14 @@ article .faq {
 
     dt.viewing, dd {
         background-color:#e6ebf5;
+    }
+
+    dt.viewing {
+        padding-bottom:16px;
+        button {
+            background:url('../image/icon-close-info@3x.png') center center no-repeat;
+            background-size:contain;
+        }
     }
 
     dt.viewing + dd {
