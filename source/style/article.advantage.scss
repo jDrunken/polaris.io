@@ -1,42 +1,35 @@
 @charset 'UTF-8';
 
 article .advantage {
-    padding:200px 0;
-    position:relative;
+    background-color:#f7f9fd;
 
-    // bg-color
-    &:before {
-        content:'';
-        position:absolute;
-        top:0;
-        left:-200%;
-        right:-200%;
-        bottom:0;
-        display:block;
-        background-color:#f2f5fc;
-        z-index:-1;
+    .wrapper {
+        padding:200px 0;
+        position:relative;
     }
 
     div.relationship_diagram {
         overflow:hidden;
         width:720px;
         height:444px;
-        margin:48px auto;
+        margin:48px auto 32px;
     }
 
     ul {
         margin:0;
         padding:0;
-        overflow:hidden;
+        font-size:0;
+        margin-top:-48px;
 
         li {
             margin:0;
             padding:0 7px;
             list-style-type:none;
             box-sizing:border-box;
-            float:left;
             width:calc(100% / 3);
             margin-top:48px;
+            display:inline-block;
+            vertical-align:top;
 
             img {
                 display:block;
@@ -58,7 +51,8 @@ article .advantage {
                 color:#808080;
                 line-height:1.6;
                 font-size:rem(14);
-                height:160px;
+                font-weight:300;
+                margin-bottom:0;
             }
         }
     }

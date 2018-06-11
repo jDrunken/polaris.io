@@ -1,70 +1,158 @@
 @charset 'UTF-8';
 
-
 article .summary {
-    height:720px;
+    overflow:hidden;
     position:relative;
 
-    &:before {
-        content:'';
-        z-index:-1;
+    // 인터랙션을 위해서 꾸밈
+    .deco.ci.circle {
         position:absolute;
         top:0;
-        left:-200%;
+        left:0;
+        right:0;
         bottom:0;
-        right:-200%;
+        background:linear-gradient(to right, #ccd0da 50%, #eaeffa);
 
-        background-image: radial-gradient(
-                circle at 54% center,
-                #e7eaf2 174px,
-                #dce0eb 175px,
+        div {
+            position:absolute;
+            border-radius:100%;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
 
-                #dce0eb 323px,
-                #d1d5df 325px,
+        .circle1 {
+            background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
+        }
 
-                #e6ebf6 480px,
-                #e1e6f0 492px,
-                transparent 493px
-            ), linear-gradient(to right, #ccd0da 30%, #eaeffa 75%);
+        .circle2 {
+            background:#e6ebf5;
+            box-shadow:0 0 100px #dfe4ee;
+        }
 
-        background-position:center,left,left;
-        background-repeat:no-repeat;
+        .circle3 {
+            background:#e7eaf2;
+            box-shadow:0 0 100px #dce1eb;
+        }
+
+        @include media_query ($device_small) {
+            .circle1 {
+                width:649px;
+                height:649px;
+                background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                transform:translate(0,0);
+            }
+
+            .circle2 {
+                width:423px;
+                height:423px;
+            }
+
+            .circle3 {
+                width:249px;
+                height:249px;
+            }
+
+            .ci {
+                width:150px;
+                height:150px;
+            }
+
+            .ci {
+                width:150px;
+                height:150px;
+                background:url('../image/polaris-simbol-c@3x.png') left top no-repeat transparent;
+                background-size:cover;
+            }
+        }
+
+        @include media_query ($device_large) {
+            .circle1 {
+                width:988px;
+                height:988px;
+                left:calc(50% - 270px);
+                transform:translate(0,-50%);
+            }
+
+            .circle2 {
+                width:644px;
+                height:644px;
+            }
+
+            .circle3 {
+                width:348px;
+                height:348px;
+            }
+
+            .ci {
+                width:240px;
+                height:240px;
+            }
+        }
     }
 
-    &:after {
-        content:'';
-        left:calc(54% + 30px);
-        top:50%;
-        transform:translateY(-50%);
-        width:240px;
-        height:240px;
-        position:absolute;
-        background: url('../image/polaris-simbol-c@3x.png') center center no-repeat;
-        background-size:cover;
+    .wrapper {
+        position:relative;
+        box-sizing:border-box;
+
+        @include media_query ($device_small) {
+            height:460px;
+            padding-top:117px;
+        }
+
+        @include media_query ($device_large) {
+            display:flex;
+            flex-flow:column wrap;
+            justify-content:center;
+            height:720px;
+        }
     }
 
-    display:flex;
-    flex-flow:column wrap;
-    justify-content:center;
+
+
 
     h2 {
-        font-size:rem(44);
-        line-height:1.23;
         font-family:$em-font;
         font-weight:400;
         color:#4a4a4a;
+
+        @include media_query ($device_small) {
+            font-size:rem(24);
+            line-height:1.42;
+        }
+
+        @include media_query ($device_large) {
+            font-size:rem(44);
+            line-height:1.23;
+        }
     }
 
     a.button.middle {
-        font-size:rem(20);
-        height:58px;
-        line-height:58px;
         font-family:$em-font;
-        width:224px;
+
         text-align:center;
         font-weight:300;
-
         margin-top:40px;
+
+
+        @include media_query ($device_small) {
+            width:148px;
+            height:46px;
+            line-height:44px;
+            font-size:rem(16);
+        }
+
+        @include media_query ($device_large) {
+            font-size:rem(20);
+            width:224px;
+            height:58px;
+            line-height:56px;
+        }
+
     }
 
     .btn_area {

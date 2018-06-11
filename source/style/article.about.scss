@@ -1,111 +1,55 @@
 @charset 'UTF-8';
 
 article .about {
-    padding-top:200px;
-    padding-bottom:200px;
-    position:relative;
+    background-color:#f2f5fc;
 
-    // bg-color
-    &:before {
-        content:'';
-        position:absolute;
-        top:0;
-        left:-200%;
-        right:-200%;
-        bottom:0;
-        display:block;
-        background-color:#f2f5fc;
-        z-index:-1;
+    .wrapper {
+        padding-top:200px;
+        padding-bottom:200px;
+        position:relative;
+        box-sizing:border-box;
+        min-height:661px;
     }
 
     // eos node image
     h2 + img {
-        width:160px;
-        height:273px;
+        // width:160px;
+        // height:273px;
+        // right:79px;
+
+        width: 250px;
+        height: 353px;
+        right:39px;
 
         position:absolute;
-        right:79px;
         top:50%;
         transform:translateY(-50%);
     }
 
+    p {
+        font-family:$em-font;
+        font-weight:300;
+        color:#4a4a4a;
+    }
 
-    $all_dt_width:341px;
-
-    dl {
+    p:nth-of-type(1) {
         margin-top:56px;
-        position:relative;
-        width:376px;
+        width:580px;
+        line-height:1.83;
+    }
 
-        dt {
-            position:absolute;
-            top:0;
-            display:inline-block;
+    p:nth-of-type(2) {
+        font-size:rem(12);
+        a {
+            color:inherit;
 
-            button {
-                outline:0;
-                font-size:rem(16);
-                padding:16px 23px;
-                color:#7d8eb2;
-                width:calc(#{$all_dt_width} / 3);
-
-                &:after {
-                    content:'';
-                    display:block;
-                    height:2px;
-                    background-color:#e6ebf5;
-
-                    position:absolute;
-                    bottom:0;
-                    left:0;
-                    right:0;
-                }
+            &:link {
+                text-decoration:underline;
             }
 
-            &.viewing button {
-                font-family:$em-font;
-                font-weight:600;
-                color:#4a4a4a;
-
-                &:after {
-                    background-color:transparent;
-                    background-image: linear-gradient(to right, #27b9fb, #b827fb);
-
-                }
+            &:hover {
+                color:#000;
             }
-
-            &:first-letter {
-                text-transform:uppercase;
-            }
-
-        }
-
-        dt:nth-of-type(1) {
-            left:calc(#{$all_dt_width} / 3 * 0);
-        }
-
-        dt:nth-of-type(2) {
-            left:calc(#{$all_dt_width} / 3 * 1);
-        }
-
-        dt:nth-of-type(3) {
-            left:calc(#{$all_dt_width} / 3 * 2);
-        }
-
-
-        dd {
-            margin:0;
-            font-weight:300;
-            color:#4a4a4a;
-            line-height:1.6;
-            visibility:hidden;
-            top:90px;
-            display:block;
-        }
-
-        dt.viewing + dd {
-            position:relative;
-            visibility:visible;
         }
     }
 }

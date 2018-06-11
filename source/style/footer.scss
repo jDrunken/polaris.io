@@ -1,23 +1,14 @@
 @charset 'UTF-8';
 
 footer {
-    box-sizing:border-box;
-    color:#fff;
-    position:relative;
+    background-color:#4a4a4a;
 
-    padding:81px 0;
-
-    // 배경색
-    &:before {
-        content:'';
-        display:block;
-        position:absolute;
-        top:0;
-        left:-200%;
-        right:-200%;
-        bottom:0;
-        background-color:#4a4a4a;
-        z-index:-1;
+    .wrapper {
+        box-sizing:border-box;
+        color:#fff;
+        position:relative;
+        padding:81px 0;
+        margin:0 auto;
     }
 
     h2 {
@@ -74,6 +65,7 @@ footer {
         background-repeat:no-repeat;
         background-color:transparent;
         background-size:cover;
+        transition:transform 0.1s linear;
         @include ir();
 
         &.twitter {
@@ -86,6 +78,10 @@ footer {
 
         &.medium {
             background-image:url('../image/icon-medium-footer@3x.png');
+        }
+
+        &:hover {
+            transform:rotate(-10deg);
         }
     }
 

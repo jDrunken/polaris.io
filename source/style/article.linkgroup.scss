@@ -1,29 +1,19 @@
 @charset 'UTF-8';
 
 article .link_group {
-    display:flex;
-    height:160px;
-    align-items:center;
-    justify-content:center;
 
-    position:relative;
+    background-color:#e0e4ea;
 
-    // 배경색 설정
-    &:before {
-        content:'';
-        display:block;
-        background-color:#e0e4ea;
-
-        position:absolute;
-        top:0;
-        left:-200%;
-        right:-200%;
-        bottom:0;
-        z-index:-1;
+    .wrapper {
+        display:flex;
+        height:160px;
+        align-items:center;
+        justify-content:space-between;
+        position:relative;
     }
 
     a {
-        margin-left:66px;
+        // margin-left:66px;
         display:inline-block;
 
         &:first-child {

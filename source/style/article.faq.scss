@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 article .faq {
-    padding-top:200px;
+    // padding-top:200px;
 
     position:relative;
 
@@ -14,6 +14,11 @@ article .faq {
 
     dl {
         margin-top:40px;
+        display:none;
+    }
+
+    dl.viewing {
+        display:block;
     }
 
     dt {
@@ -24,18 +29,19 @@ article .faq {
         line-height:1.6;
 
         button {
+            @include ir();
+
             width:16px;
             height:16px;
-
-            @include ir();
 
             background:url('../image/icon-open-info@3x.png') center center no-repeat;
             background-size:contain;
 
             position:absolute;
             right:$padding_hr;
-            top:50%;
-            transform:translateY(-50%);
+
+            top:36px;
+            outline:0;
         }
     }
 

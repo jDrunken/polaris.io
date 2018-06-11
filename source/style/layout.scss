@@ -8,8 +8,6 @@ article .link_group {
 // layout
 header,
 footer {
-    margin:0 auto;
-
     > .wrapper {
         max-width: 946px;
     }
@@ -21,6 +19,8 @@ article {
 
     > section {
         box-sizing:border-box;
+        padding-left:20px;
+        padding-right:20px;
 
         > .wrapper {
             margin:0 auto;
@@ -28,3 +28,15 @@ article {
     }
 }
 
+.wrapper {
+    @include media_query($device_large) {
+        width:946px;
+    }
+}
+
+@include media_query ($device_small) {
+    article .summary ~ section,
+    footer {
+        display:none;
+    }
+}
