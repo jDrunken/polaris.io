@@ -4,11 +4,20 @@ article .about {
     background-color:#f2f5fc;
 
     .wrapper {
-        padding-top:200px;
-        padding-bottom:200px;
         position:relative;
         box-sizing:border-box;
-        min-height:661px;
+
+        @include media_query ($device_small) {
+            padding:49px 0;
+            display:flex;
+            flex-flow:column;
+        }
+
+        @include media_query ($device_large) {
+            padding-top:200px;
+            padding-bottom:200px;
+            min-height:661px;
+        }
     }
 
     // eos node image
@@ -17,28 +26,60 @@ article .about {
         // height:273px;
         // right:79px;
 
-        width: 250px;
-        height: 353px;
-        right:39px;
+        @include media_query ($device_small) {
+            width: 126px;
+            height: 166px;
+            display:block;
+            margin:24px auto 0;
 
-        position:absolute;
-        top:50%;
-        transform:translateY(-50%);
+            order:3;
+        }
+
+        @include media_query ($device_large) {
+            position:absolute;
+            right:39px;
+            top:50%;
+            transform:translateY(-50%);
+
+            width: 250px;
+            height: 353px;
+
+        }
     }
 
     p {
-        font-family:$em-font;
-        font-weight:300;
         color:#4a4a4a;
+        @include media_query ($device_small) {
+            font-size:rem(12);
+        }
+
+        @include media_query ($device_large) {
+            font-family:$em-font;
+            font-weight:300;
+        }
     }
 
     p:nth-of-type(1) {
-        margin-top:56px;
-        width:580px;
-        line-height:1.83;
+
+        @include media_query ($device_small) {
+            margin-top:48px;
+            line-height:1.67;
+            order:1;
+        }
+
+        @include media_query ($device_large) {
+            margin-top:56px;
+            line-height:1.83;
+            width:580px;
+        }
     }
 
     p:nth-of-type(2) {
+        @include media_query ($device_small) {
+            margin-top:12px;
+            order:2;
+        }
+
         font-size:rem(12);
         a {
             color:inherit;

@@ -35,7 +35,7 @@ article {
 }
 
 @include media_query ($device_small) {
-    article .summary ~ section,
+    article .more_info ~ section,
     footer {
         display:none;
     }

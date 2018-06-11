@@ -13,7 +13,14 @@ article .faq {
     $padding_right : $padding_hr + 38px;
 
     dl {
-        margin-top:40px;
+        @include media_query ($device_small) {
+            margin-top:24px;
+        }
+
+        @include media_query ($device_large) {
+            margin-top:40px;
+        }
+
         display:none;
     }
 
@@ -22,7 +29,14 @@ article .faq {
     }
 
     dt {
-        padding:32px $padding_right 32px $padding_hr;
+        @include media_query ($device_small) {
+            padding:20px 40px 20px 20px;
+            font-size:rem(12);
+        }
+
+        @include media_query ($device_large) {
+            padding:32px $padding_right 32px $padding_hr;
+        }
         background-color:#f2f5fc;
         position:relative;
         color:#6a6a6a;
@@ -31,16 +45,28 @@ article .faq {
         button {
             @include ir();
 
-            width:16px;
-            height:16px;
 
             background:url('../image/icon-open-info@3x.png') center center no-repeat;
             background-size:contain;
 
             position:absolute;
-            right:$padding_hr;
 
-            top:36px;
+            @include media_query ($device_small) {
+                right:20px;
+                top:23px;
+                width:10px;
+                height:10px;
+            }
+
+            @include media_query ($device_large) {
+                right:$padding_hr;
+                top:36px;
+                width:16px;
+                height:16px;
+
+            }
+
+
             outline:0;
         }
     }
@@ -49,7 +75,16 @@ article .faq {
         font-size:rem(14);
         color:#6a6a6a;
         line-height:1.6;
-        padding:0 $padding_hr 32px;
+
+        @include media_query ($device_small) {
+            padding:0 20px 20px;
+            font-size:rem(12);
+        }
+
+        @include media_query ($device_large) {
+            padding:0 $padding_hr 32px;
+        }
+
         font-weight:300;
 
         display:none;
@@ -77,10 +112,19 @@ article .faq {
         display:flex;
 
         a {
+            @include media_query ($device_small) {
+                padding:16px 0;
+                font-size:rem(12);
+            }
+
+            @include media_query ($device_large) {
+                padding:32px 0;
+            }
+
+
             text-align:center;
             display:inline-block;
             width:33.3%;
-            padding:32px 0;
             color:#687699;
             position:relative;
             line-height:1.1;

@@ -40,10 +40,10 @@ article .summary {
                 width:649px;
                 height:649px;
                 background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
-                top:0;
-                left:0;
-                right:0;
-                bottom:0;
+                top:auto;
+                left:auto;
+                bottom:-230px;
+                right:-230px;
                 transform:translate(0,0);
             }
 

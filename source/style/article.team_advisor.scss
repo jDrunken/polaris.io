@@ -1,10 +1,26 @@
 @charset 'UTF-8';
 article .team {
-    padding-top:200px;
+    @include media_query ($device_small) {
+        padding-top:48px;
+    }
+
+    @include media_query ($device_large) {
+        padding-top:200px;
+    }
+
 }
 
 article .advisor {
-    padding:200px 0;
+    @include media_query ($device_small) {
+        padding-top:48px;
+        padding-bottom:48px;
+    }
+
+    @include media_query ($device_large) {
+        padding-top:200px;
+        padding-bottom:200px;
+    }
+
 }
 article .team,
 article .advisor {
@@ -17,17 +33,28 @@ article .advisor {
 
     ul {
         overflow:hidden;
-        margin-left:-12px;
+
+        @include media_query ($device_large) {
+            margin-left:-12px;
+        }
 
         > li {
             // 고정 넓이에서 갯수가 변화하는 형식을 취한다.
-            margin-top:48px;
             width:225px;
             height:414px;
-            float:left;
+
+            @include media_query ($device_small) {
+                margin:40px auto 0;
+            }
+
+            @include media_query ($device_large) {
+                margin-top:48px;
+                margin-left:12px;
+                float:left;
+            }
+
             text-align:center;
             background-color:#f2f5fc;
-            margin-left:12px;
 
             position:relative;
 

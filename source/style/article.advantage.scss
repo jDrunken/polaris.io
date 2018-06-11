@@ -4,15 +4,30 @@ article .advantage {
     background-color:#f7f9fd;
 
     .wrapper {
-        padding:200px 0;
         position:relative;
+
+        @include media_query ($device_small) {
+            padding-top:48px;
+            padding-bottom:48px;
+        }
+
+        @include media_query ($device_large) {
+            padding:200px 0;
+        }
     }
 
     div.relationship_diagram {
         overflow:hidden;
-        width:720px;
-        height:444px;
         margin:48px auto 32px;
+
+        @include media_query ($device_small) {
+
+        }
+
+        @include media_query ($device_large) {
+            width:720px;
+            height:444px;
+        }
     }
 
     ul {
@@ -26,20 +41,41 @@ article .advantage {
             padding:0 7px;
             list-style-type:none;
             box-sizing:border-box;
-            width:calc(100% / 3);
-            margin-top:48px;
-            display:inline-block;
-            vertical-align:top;
+
+            @include media_query ($device_small) {
+                margin-top:16px;
+            }
+
+            @include media_query ($device_large) {
+                margin-top:48px;
+                display:inline-block;
+                vertical-align:top;
+                width:calc(100% / 3);
+            }
 
             img {
                 display:block;
                 margin:0 auto 4px;
-                width:136px;
-                height:136px;
+
+                @include media_query ($device_small) {
+                    width:96px;
+                    height:96px;
+                }
+
+                @include media_query ($device_large) {
+                    width:136px;
+                    height:136px;
+                }
             }
 
             h3 {
-                font-size:rem(16);
+                @include media_query ($device_small) {
+                    font-size:rem(12);
+                }
+
+                @include media_query ($device_large) {
+                    font-size:rem(16);
+                }
                 font-family:$em-font;
                 font-weight:600;
                 color:#4a4a4a;
@@ -47,10 +83,16 @@ article .advantage {
             }
 
             p {
+                @include media_query ($device_small) {
+                    font-size:rem(12);
+                }
+
+                @include media_query ($device_large) {
+                    font-size:rem(14);
+                }
                 text-align:center;
                 color:#808080;
                 line-height:1.6;
-                font-size:rem(14);
                 font-weight:300;
                 margin-bottom:0;
             }
