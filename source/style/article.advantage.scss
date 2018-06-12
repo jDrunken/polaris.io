@@ -19,12 +19,18 @@ article .advantage {
     }
 
     div.relationship_diagram {
-        overflow:hidden;
         margin:48px auto 32px;
 
-        max-width:720px;
-        max-height:444px;
+        width:720px;
+        height:409px;
+        position:relative;
 
+        & > div {
+            position:absolute;
+        }
+
+        // 애니메이션이 너무 길어서 여기에 포함
+        @import 'article.advantage.interaction.scss';
     }
 
     ul {
@@ -72,9 +78,9 @@ article .advantage {
             h3 {
                 font-size:rem(16);
 
-                // @include media ('<=min') {
-                //     font-size:rem(12);
-                // }
+                @include media ('<500px') {
+                    font-size:rem(12);
+                }
 
                 font-family:$em-font;
                 font-weight:600;
@@ -85,12 +91,12 @@ article .advantage {
             p {
                 font-size:rem(14);
 
-                // @include media ('<=min') {
-                //     font-size:rem(12);
-                // }
+                @include media ('<500px') {
+                    font-size:rem(12);
+                }
 
                 text-align:center;
-                color:#808080;
+                color:#5c5c5c;
                 line-height:1.6;
                 font-weight:300;
                 margin-bottom:0;

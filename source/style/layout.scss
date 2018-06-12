@@ -6,6 +6,14 @@ article .link_group {
 }
 
 
+header,
+footer,
+article {
+    .wrapper {
+        max-width:946px;
+    }
+}
+
 article {
 
     @include media('<=min') {
@@ -24,11 +32,6 @@ article {
         > .wrapper {
             margin:0 auto;
             padding:200px 0;
-
-
-            @include media('>=max') {
-                width:946px;
-            }
 
             // 상하 여백
             @include media ('<900px') {
@@ -50,3 +53,8 @@ article .advisor {
     }
 }
 
+article .more_info {
+    .wrapper {
+        padding-top:73px;
+    }
+}

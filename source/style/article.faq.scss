@@ -21,6 +21,10 @@ article .faq {
         }
     }
 
+    dt,dd {
+        font-family:$em-font;
+    }
+
     dl.viewing {
         display:block;
     }
@@ -135,7 +139,7 @@ article .faq {
             text-align:center;
             display:inline-block;
             width:33.3%;
-            color:#687699;
+            color:#5c5c5c;
             position:relative;
             line-height:1.1;
 

@@ -52,13 +52,12 @@ article .about {
     }
 
     p {
-        color:#4a4a4a;
+        color:#5c5c5c;
         font-family:$em-font;
-        font-weight:300;
 
-        // @include media ('<=min') {
-        //     font-size:rem(12);
-        // }
+        @include media ('<500px') {
+            font-size:rem(12);
+        }
 
     }
 

@@ -10,7 +10,6 @@ header {
     // 이건 애니메이션이랑 섞어서 생각해봐야 되는거 아니냐?
     transition:all 0.1s;
 
-    //device-max
 
     .wrapper {
 
@@ -35,15 +34,15 @@ header h1 a {
 
     display:block;
 
-    background:url('../image/polaris-logo-c@3x.png');
+    background:url('../image/polaris-logo-c@2x.png');
     background-repeat:no-repeat;
     background-size:cover;
 
 
     @include ir();
 
-    width:150px;
-    height:23px;
+    width:123px;
+    height:18px;
 
     @include media ('<450px') {
         width:80px;
@@ -227,7 +226,7 @@ header.invert {
     background-color:#4a4a4a;
 
     nav a {
-        color:#808080;
+        color:#bdbdbd;
 
         &:hover {
             color:#fff;
