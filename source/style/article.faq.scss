@@ -1,7 +1,10 @@
 @charset 'UTF-8';
 
 article .faq {
-    // padding-top:200px;
+    @include media ('<=min') {
+        padding-top:96px;
+    }
+
 
     position:relative;
 
@@ -13,11 +16,11 @@ article .faq {
     $padding_right : $padding_hr + 38px;
 
     dl {
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             margin-top:24px;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             margin-top:40px;
         }
 
@@ -29,12 +32,12 @@ article .faq {
     }
 
     dt {
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             padding:20px 40px 20px 20px;
             font-size:rem(12);
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             padding:32px $padding_right 32px $padding_hr;
         }
         background-color:#f2f5fc;
@@ -51,14 +54,14 @@ article .faq {
 
             position:absolute;
 
-            @include media_query ($device_small) {
+            @include media ('<=min') {
                 right:20px;
                 top:23px;
                 width:10px;
                 height:10px;
             }
 
-            @include media_query ($device_large) {
+            @include media ('>=max') {
                 right:$padding_hr;
                 top:36px;
                 width:16px;
@@ -76,12 +79,12 @@ article .faq {
         color:#6a6a6a;
         line-height:1.6;
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             padding:0 20px 20px;
             font-size:rem(12);
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             padding:0 $padding_hr 32px;
         }
 
@@ -111,13 +114,17 @@ article .faq {
     div.link.container {
         display:flex;
 
+        @include media ('<=min') {
+            margin-top:24px;
+        }
+
         a {
-            @include media_query ($device_small) {
+            @include media ('<=min') {
                 padding:16px 0;
                 font-size:rem(12);
             }
 
-            @include media_query ($device_large) {
+            @include media ('>=max') {
                 padding:32px 0;
             }
 

@@ -7,66 +7,110 @@ footer {
         box-sizing:border-box;
         color:#fff;
         position:relative;
-        padding:81px 0;
         margin:0 auto;
+
+        @include media ('<=min') {
+            padding:20px;
+        }
+
+        @include media ('>=max') {
+            padding:81px 0;
+        }
     }
 
     h2 {
-        width:120px;
-        height:18px;
-        margin-bottom:18px;
         text-transform:uppercase;
         @include ir();
 
         background:url('../image/polaris-logo-footer@3x.png') left top no-repeat;
         background-size:cover;
+
+
+        @include media ('<=min') {
+            margin-bottom:8px;
+            width:66px;
+            height:10px;
+        }
+
+        @include media ('>=max') {
+            margin-bottom:18px;
+            width:120px;
+            height:18px;
+        }
+}
+
+a, p.copyright {
+    color:#abb3c6;
+    font-family:$em-font;
+}
+
+a {
+    font-weight:400;
+    @include media ('<=min') {
+        font-size:rem(10);
     }
 
-    a, p.copyright {
-        color:#abb3c6;
-        font-family:$em-font;
-    }
-
-    a {
-        font-weight:400;
+    @include media ('>=max') {
         font-size:rem(16);
     }
+}
 
-    p.copyright {
-        font-weight:300;
-        margin:0.6em 0 0 0;
+p.copyright {
+    @include media ('<=min') {
+        font-size:rem(10);
     }
 
-    ul,li {
-        padding:0;
+    font-weight:300;
+    margin:0.6em 0 0 0;
+}
+
+ul,li {
+    padding:0;
         margin:0;
     }
 
     ul.external.link {
         position:absolute;
-        right:0;
-        top:78px;
         overflow:hidden;
 
+        @include media ('<=min') {
+            top:20px;
+            right:23px;
+        }
+
+        @include media ('>=max') {
+            right:0;
+            top:78px;
+        }
+
         li {
-            float:left;
             list-style-type:none;
             padding:0;
             margin:0;
+            float:left;
         }
     }
 
     a.ci {
         display:inline-block;
-        width:32px;
-        height:32px;
-        margin-left:44px;
         background-position:left top;
         background-repeat:no-repeat;
         background-color:transparent;
         background-size:cover;
         transition:transform 0.1s linear;
         @include ir();
+
+        @include media ('<=min') {
+            width:19px;
+            height:19px;
+            margin-left:19px;
+        }
+
+        @include media ('>=max') {
+            width:32px;
+            height:32px;
+            margin-left:44px;
+        }
 
         &.twitter {
             background-image:url('../image/icon-twitter-footer@3x.png');

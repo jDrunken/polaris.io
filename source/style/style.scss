@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 // font embed :: google webfont
-@import '//fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900';
+@import '//fonts.googleapis.com/css?family=Montserrat:300,400,600,700';
 @import '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css';
 
 // 환경설정과 변수, 함수
@@ -13,7 +13,7 @@
 // element
 @import 'button.scss';
 @import 'input.scss';
-@import 'shape-interaction.bugger.scss';
+// @import 'shape-interaction.bugger.scss';
 
 // layout
 @import 'layout.scss';

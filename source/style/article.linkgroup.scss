@@ -11,13 +11,13 @@ article .link_group {
         box-sizing:border-box;
         justify-content:space-between;
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             flex-flow:row wrap;
             padding:20px;
             height:108px;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             height:160px;
         }
     }
@@ -49,7 +49,7 @@ article .link_group {
             background-image:url('../image/partner-cointelegraph@3x.png');
         }
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             margin:0 10px;
 
             &.ethereum {
@@ -69,7 +69,7 @@ article .link_group {
                 height:20px;
             }
         }
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             &.ethereum {
                 width:180px;
                 height:46px;

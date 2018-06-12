@@ -13,18 +13,20 @@ header {
     //device-max
 
     .wrapper {
-        margin:0 20px;
 
         display:flex;
         align-items:center;
         justify-content:space-between;
 
-        @include media_query ($device_large) {
-            height:80px;
+
+        @include media ('<=min') {
+            height:56px;
+            margin:0 20px;
         }
 
-        @include media_query ($device_small) {
-            height:56px;
+        @include media ('>=max') {
+            margin:0 auto;
+            height:80px;
         }
     }
 }
@@ -40,12 +42,12 @@ header h1 a {
 
     @include ir();
 
-    @include media_query ($device_large) {
+    @include media ('>=max') {
         width:150px;
         height:23px;
     }
 
-    @include media_query ($device_small) {
+    @include media ('<=min') {
         width:80px;
         height:12px;
     }
@@ -53,8 +55,14 @@ header h1 a {
 }
 
 nav {
+    @include media ('>=max') {
+        a.ci,
+        button.close {
+            display:none;
+        }
+    }
 
-    @include media_query ($device_small) {
+    @include media ('<=min') {
         $top:36px;
         $left:32px;
         $right:20px;
@@ -64,6 +72,7 @@ nav {
         position:absolute;
         top:0;
         right:0;
+        max-height:425px;
         height:100vh;
         background:#4a4a4a;
         width:254px;
@@ -110,7 +119,6 @@ nav {
         }
 
         a.ci {
-            display:block;
             width:28px;
             height:28px;
 
@@ -144,6 +152,7 @@ nav {
 
         }   // a.ci
 
+
         button.close {
             background:url('../image/icon-close@3x.png') left top transparent no-repeat;
             width:18px;
@@ -166,7 +175,7 @@ nav {
         }
     }
 
-    @include media_query ($device_large) {
+    @include media ('>=max') {
         a {
             display:inline-block;
             font-size:rem(16);
@@ -238,7 +247,7 @@ header.invert {
     font-weight:600;
 }
 
-@include media_query ($device_small) {
+@include media ('<=min') {
     .lang {
         color:#808080;
     }
@@ -253,47 +262,54 @@ header.invert {
 
 
 // 버거 메뉴
-.bugger {
-    width: 20px;
-    height: 16px;
-    position: relative;
-    transition: .5s ease-in-out;
-    cursor: pointer;
-    outline:0;
-    -webkit-tap-highlight-color: transparent;
-
-
-    span {
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 100%;
-        background: #d3531a;
-        border-radius: 9px;
-        opacity: 1;
-        left: 0;
-        transform: rotate(0deg);
-        transition: .25s ease-in-out;
-        background: linear-gradient(to right, #47e1fd, #b827fb);
+@include media ('>=max') {
+    .bugger {
+        display:none;
     }
-
-    span:nth-child(1) {
-        top: 0px;
-    }
-
-    span:nth-child(2) {
-        top: 50%;
-        transform:translateY(-50%);
-    }
-
-    span:nth-child(3) {
-        bottom: 0;
-    }
-
 }
 
-header.invert .bugger span {
-    background:#808080;
+@include media ('<=min') {
+    .bugger {
+
+        width: 20px;
+        height: 16px;
+        position: relative;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        outline:0;
+        -webkit-tap-highlight-color: transparent;
+
+
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #d3531a;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+            background: linear-gradient(to right, #47e1fd, #b827fb);
+        }
+
+        span:nth-child(1) {
+            top: 0px;
+        }
+
+        span:nth-child(2) {
+            top: 50%;
+            transform:translateY(-50%);
+        }
+
+        span:nth-child(3) {
+            bottom: 0;
+        }
+
+    }
+
+    header.invert .bugger span {
+        background:#808080;
+    }
 }
-
-

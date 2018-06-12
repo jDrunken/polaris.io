@@ -15,7 +15,14 @@ footer {
 
 
 article {
-    padding-bottom:177px;
+
+    @include media('<=min') {
+        padding-bottom:96px;
+    }
+
+    @include media('>=max') {
+        padding-bottom:177px;
+    }
 
     > section {
         box-sizing:border-box;
@@ -29,14 +36,7 @@ article {
 }
 
 .wrapper {
-    @include media_query($device_large) {
+    @include media('>=max') {
         width:946px;
-    }
-}
-
-@include media_query ($device_small) {
-    article .more_info ~ section,
-    footer {
-        display:none;
     }
 }

@@ -8,11 +8,11 @@ h2 {
         text-transform:uppercase;
     }
 
-    @include media_query ($device_small) {
+    @include media ('<=min') {
         font-size:rem(18);
     }
 
-    @include media_query ($device_large) {
+    @include media ('>=max') {
         font-size:rem(28);
     }
 }

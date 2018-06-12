@@ -7,13 +7,13 @@ article .about {
         position:relative;
         box-sizing:border-box;
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             padding:49px 0;
             display:flex;
             flex-flow:column;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             padding-top:200px;
             padding-bottom:200px;
             min-height:661px;
@@ -22,38 +22,34 @@ article .about {
 
     // eos node image
     h2 + img {
-        // width:160px;
-        // height:273px;
-        // right:79px;
 
-        @include media_query ($device_small) {
-            width: 126px;
-            height: 166px;
+        @include media ('<=min') {
             display:block;
             margin:24px auto 0;
 
             order:3;
+
+            width: 70%;
+            max-width:300px;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             position:absolute;
             right:39px;
             top:50%;
             transform:translateY(-50%);
 
-            width: 250px;
-            height: 353px;
-
+            width: 311px;
         }
     }
 
     p {
         color:#4a4a4a;
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             font-size:rem(12);
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             font-family:$em-font;
             font-weight:300;
         }
@@ -61,13 +57,13 @@ article .about {
 
     p:nth-of-type(1) {
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             margin-top:48px;
             line-height:1.67;
             order:1;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             margin-top:56px;
             line-height:1.83;
             width:580px;
@@ -75,7 +71,7 @@ article .about {
     }
 
     p:nth-of-type(2) {
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             margin-top:12px;
             order:2;
         }

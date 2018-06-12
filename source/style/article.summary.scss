@@ -35,7 +35,12 @@ article .summary {
             box-shadow:0 0 100px #dce1eb;
         }
 
-        @include media_query ($device_small) {
+        .ci {
+            background:url('../image/polaris-simbol-c@3x.png') left top no-repeat transparent;
+            background-size:cover;
+        }
+
+        @include media ('<=min') {
             .circle1 {
                 width:649px;
                 height:649px;
@@ -62,15 +67,9 @@ article .summary {
                 height:150px;
             }
 
-            .ci {
-                width:150px;
-                height:150px;
-                background:url('../image/polaris-simbol-c@3x.png') left top no-repeat transparent;
-                background-size:cover;
-            }
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             .circle1 {
                 width:988px;
                 height:988px;
@@ -99,12 +98,12 @@ article .summary {
         position:relative;
         box-sizing:border-box;
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             height:460px;
             padding-top:117px;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             display:flex;
             flex-flow:column wrap;
             justify-content:center;
@@ -120,12 +119,12 @@ article .summary {
         font-weight:400;
         color:#4a4a4a;
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             font-size:rem(24);
             line-height:1.42;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             font-size:rem(44);
             line-height:1.23;
         }
@@ -139,14 +138,14 @@ article .summary {
         margin-top:40px;
 
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             width:148px;
             height:46px;
             line-height:44px;
             font-size:rem(16);
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             font-size:rem(20);
             width:224px;
             height:58px;

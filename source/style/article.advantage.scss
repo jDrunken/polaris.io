@@ -6,12 +6,12 @@ article .advantage {
     .wrapper {
         position:relative;
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
             padding-top:48px;
             padding-bottom:48px;
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             padding:200px 0;
         }
     }
@@ -20,11 +20,11 @@ article .advantage {
         overflow:hidden;
         margin:48px auto 32px;
 
-        @include media_query ($device_small) {
+        @include media ('<=min') {
 
         }
 
-        @include media_query ($device_large) {
+        @include media ('>=max') {
             width:720px;
             height:444px;
         }
@@ -34,7 +34,10 @@ article .advantage {
         margin:0;
         padding:0;
         font-size:0;
-        margin-top:-48px;
+
+        @include media ('>=max') {
+            margin-top:-48px;
+        }
 
         li {
             margin:0;
@@ -42,11 +45,11 @@ article .advantage {
             list-style-type:none;
             box-sizing:border-box;
 
-            @include media_query ($device_small) {
+            @include media ('<=min') {
                 margin-top:16px;
             }
 
-            @include media_query ($device_large) {
+            @include media ('>=max') {
                 margin-top:48px;
                 display:inline-block;
                 vertical-align:top;
@@ -57,23 +60,23 @@ article .advantage {
                 display:block;
                 margin:0 auto 4px;
 
-                @include media_query ($device_small) {
+                @include media ('<=min') {
                     width:96px;
                     height:96px;
                 }
 
-                @include media_query ($device_large) {
+                @include media ('>=max') {
                     width:136px;
                     height:136px;
                 }
             }
 
             h3 {
-                @include media_query ($device_small) {
+                @include media ('<=min') {
                     font-size:rem(12);
                 }
 
-                @include media_query ($device_large) {
+                @include media ('>=max') {
                     font-size:rem(16);
                 }
                 font-family:$em-font;
@@ -83,11 +86,11 @@ article .advantage {
             }
 
             p {
-                @include media_query ($device_small) {
+                @include media ('<=min') {
                     font-size:rem(12);
                 }
 
-                @include media_query ($device_large) {
+                @include media ('>=max') {
                     font-size:rem(14);
                 }
                 text-align:center;
