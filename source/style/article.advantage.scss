@@ -6,28 +6,25 @@ article .advantage {
     .wrapper {
         position:relative;
 
-        @include media ('<=min') {
+        @include media ('<600px') {
+            display:flex;
+            flex-flow:column;
+        }
+
+        @include media ('<400px') {
             padding-top:48px;
             padding-bottom:48px;
         }
 
-        @include media ('>=max') {
-            padding:200px 0;
-        }
     }
 
     div.relationship_diagram {
         overflow:hidden;
         margin:48px auto 32px;
 
-        @include media ('<=min') {
+        max-width:720px;
+        max-height:444px;
 
-        }
-
-        @include media ('>=max') {
-            width:720px;
-            height:444px;
-        }
     }
 
     ul {
@@ -35,9 +32,7 @@ article .advantage {
         padding:0;
         font-size:0;
 
-        @include media ('>=max') {
-            margin-top:-48px;
-        }
+        margin-top:-48px;
 
         li {
             margin:0;
@@ -45,40 +40,42 @@ article .advantage {
             list-style-type:none;
             box-sizing:border-box;
 
-            @include media ('<=min') {
+            margin-top:48px;
+            display:inline-block;
+            vertical-align:top;
+            width:calc(100% / 3);
+
+            @include media ('<750px') {
+                width:calc(100% / 2);
+                margin-top:32px;
+            }
+
+            @include media ('<500px') {
+                width:calc(100%);
                 margin-top:16px;
             }
 
-            @include media ('>=max') {
-                margin-top:48px;
-                display:inline-block;
-                vertical-align:top;
-                width:calc(100% / 3);
-            }
 
             img {
                 display:block;
                 margin:0 auto 4px;
 
-                @include media ('<=min') {
+                width:136px;
+                height:136px;
+
+                @include media ('<500px') {
                     width:96px;
                     height:96px;
-                }
-
-                @include media ('>=max') {
-                    width:136px;
-                    height:136px;
                 }
             }
 
             h3 {
-                @include media ('<=min') {
-                    font-size:rem(12);
-                }
+                font-size:rem(16);
 
-                @include media ('>=max') {
-                    font-size:rem(16);
-                }
+                // @include media ('<=min') {
+                //     font-size:rem(12);
+                // }
+
                 font-family:$em-font;
                 font-weight:600;
                 color:#4a4a4a;
@@ -86,13 +83,12 @@ article .advantage {
             }
 
             p {
-                @include media ('<=min') {
-                    font-size:rem(12);
-                }
+                font-size:rem(14);
 
-                @include media ('>=max') {
-                    font-size:rem(14);
-                }
+                // @include media ('<=min') {
+                //     font-size:rem(12);
+                // }
+
                 text-align:center;
                 color:#808080;
                 line-height:1.6;

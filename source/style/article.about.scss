@@ -7,74 +7,80 @@ article .about {
         position:relative;
         box-sizing:border-box;
 
-        @include media ('<=min') {
+        min-height:661px;
+        padding-top:200px;
+        padding-bottom:200px;
+
+        @include media ('<900px') {
+            padding:100px 0;
+        }
+
+        @include media ('<600px') {
             padding:49px 0;
             display:flex;
             flex-flow:column;
         }
 
-        @include media ('>=max') {
-            padding-top:200px;
-            padding-bottom:200px;
-            min-height:661px;
-        }
     }
 
     // eos node image
     h2 + img {
 
-        @include media ('<=min') {
+        position:absolute;
+        right:39px;
+        top:50%;
+        transform:translateY(-50%);
+
+        width: 311px;
+
+        @include media ('<950px') {
+            width:25vw;
+        }
+
+        @include media ('<600px') {
+            position:static;
             display:block;
             margin:24px auto 0;
 
             order:3;
 
-            width: 70%;
+            width: 60%;
             max-width:300px;
+            transform:none;
         }
 
-        @include media ('>=max') {
-            position:absolute;
-            right:39px;
-            top:50%;
-            transform:translateY(-50%);
-
-            width: 311px;
-        }
     }
 
     p {
         color:#4a4a4a;
-        @include media ('<=min') {
-            font-size:rem(12);
-        }
+        font-family:$em-font;
+        font-weight:300;
 
-        @include media ('>=max') {
-            font-family:$em-font;
-            font-weight:300;
-        }
+        // @include media ('<=min') {
+        //     font-size:rem(12);
+        // }
+
     }
 
     p:nth-of-type(1) {
 
-        @include media ('<=min') {
+        margin-top:56px;
+        line-height:1.83;
+        width:580px;
+
+        @include media ('<900px') {
+            width:60%;
+        }
+
+        @include media ('<600px') {
+            width:auto;
             margin-top:48px;
             line-height:1.67;
             order:1;
         }
-
-        @include media ('>=max') {
-            margin-top:56px;
-            line-height:1.83;
-            width:580px;
-        }
     }
 
     p:nth-of-type(2) {
-        @include media ('<=min') {
-            margin-top:12px;
-            order:2;
-        }
 
         font-size:rem(12);
         a {
@@ -87,6 +93,11 @@ article .about {
             &:hover {
                 color:#000;
             }
+        }
+
+        @include media ('<600px') {
+            margin-top:12px;
+            order:2;
         }
     }
 }

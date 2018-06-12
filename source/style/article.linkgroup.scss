@@ -11,15 +11,14 @@ article .link_group {
         box-sizing:border-box;
         justify-content:space-between;
 
-        @include media ('<=min') {
+        height:160px;
+
+        @include media ('<800px') {
             flex-flow:row wrap;
             padding:20px;
             height:108px;
         }
 
-        @include media ('>=max') {
-            height:160px;
-        }
     }
 
     a {
@@ -32,24 +31,53 @@ article .link_group {
     }
 
     a.ci {
-            background-repeat:no-repeat;
-            background-size:cover;
-            @include ir();
+        background-repeat:no-repeat;
+        background-size:cover;
+        @include ir();
 
         &.ethereum {
             background-image:url('../image/partner-ethereum@3x.png');
+            width:180px;
+            height:46px;
         }
         &.consensys {
             background-image:url('../image/partner-conensys@3x.png');
+            width:180px;
+            height:40px;
         }
         &.coindesk {
             background-image:url('../image/partner-coindesk@3x.png');
+            width:160px;
+            height:32px;
         }
         &.cointelegraph {
             background-image:url('../image/partner-cointelegraph@3x.png');
+            width:228px;
+            height:46px;
         }
 
-        @include media ('<=min') {
+        @include media ('<800px') {
+            margin:0 10px;
+
+            &.ethereum {
+                width:117px;
+                height:30px;
+            }
+            &.consensys {
+                width:131px;
+                height:25px;
+            }
+            &.coindesk {
+                width:104px;
+                height:20px;
+            }
+            &.cointelegraph {
+                width:139px;
+                height:30px;
+            }
+        }
+
+        @include media ('<=650px') {
             margin:0 10px;
 
             &.ethereum {
@@ -67,24 +95,6 @@ article .link_group {
             &.cointelegraph {
                 width:100px;
                 height:20px;
-            }
-        }
-        @include media ('>=max') {
-            &.ethereum {
-                width:180px;
-                height:46px;
-            }
-            &.consensys {
-                width:180px;
-                height:40px;
-            }
-            &.coindesk {
-                width:160px;
-                height:32px;
-            }
-            &.cointelegraph {
-                width:228px;
-                height:46px;
             }
         }
     }

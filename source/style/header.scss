@@ -18,16 +18,16 @@ header {
         align-items:center;
         justify-content:space-between;
 
+        padding:0 20px;
+        margin:0 auto;
+        height:80px;
 
-        @include media ('<=min') {
+        @include media ('<700px') {
+            padding:0;
             height:56px;
             margin:0 20px;
         }
 
-        @include media ('>=max') {
-            margin:0 auto;
-            height:80px;
-        }
     }
 }
 
@@ -42,12 +42,10 @@ header h1 a {
 
     @include ir();
 
-    @include media ('>=max') {
-        width:150px;
-        height:23px;
-    }
+    width:150px;
+    height:23px;
 
-    @include media ('<=min') {
+    @include media ('<450px') {
         width:80px;
         height:12px;
     }
@@ -55,14 +53,14 @@ header h1 a {
 }
 
 nav {
-    @include media ('>=max') {
+    @include media ('>=700px') {
         a.ci,
         button.close {
             display:none;
         }
     }
 
-    @include media ('<=min') {
+    @include media ('<700px') {
         $top:36px;
         $left:32px;
         $right:20px;
@@ -175,7 +173,7 @@ nav {
         }
     }
 
-    @include media ('>=max') {
+    @include media ('>=700px') {
         a {
             display:inline-block;
             font-size:rem(16);
@@ -247,7 +245,7 @@ header.invert {
     font-weight:600;
 }
 
-@include media ('<=min') {
+@include media ('<700px') {
     .lang {
         color:#808080;
     }
@@ -262,13 +260,13 @@ header.invert {
 
 
 // 버거 메뉴
-@include media ('>=max') {
+@include media ('>=700px') {
     .bugger {
         display:none;
     }
 }
 
-@include media ('<=min') {
+@include media ('<700px') {
     .bugger {
 
         width: 20px;

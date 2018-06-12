@@ -8,11 +8,9 @@ h2 {
         text-transform:uppercase;
     }
 
-    @include media ('<=min') {
-        font-size:rem(18);
-    }
+    font-size:rem(28);
 
-    @include media ('>=max') {
-        font-size:rem(28);
+    @include media ('<600px') {
+        font-size:rem(18);
     }
 }

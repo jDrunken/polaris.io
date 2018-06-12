@@ -1,27 +1,5 @@
 @charset 'UTF-8';
-article .team {
-    @include media ('<=min') {
-        padding-top:48px;
-    }
 
-    @include media ('>=max') {
-        padding-top:200px;
-    }
-
-}
-
-article .advisor {
-    @include media ('<=min') {
-        padding-top:48px;
-        padding-bottom:48px;
-    }
-
-    @include media ('>=max') {
-        padding-top:200px;
-        padding-bottom:200px;
-    }
-
-}
 article .team,
 article .advisor {
 
@@ -33,26 +11,29 @@ article .advisor {
 
     ul {
         overflow:hidden;
+        margin:0 auto;
+        font-size:0;
 
-        @include media ('>=max') {
-            margin-left:-12px;
+        display:flex;
+        flex-flow:row wrap;
+        margin-left:-12px;
+
+        @include media ('<976px') {
+            justify-content:center;
         }
+
+
+
 
         > li {
             // 고정 넓이에서 갯수가 변화하는 형식을 취한다.
+
+            height:414px;
+            margin-top:48px;
+            margin-left:12px;
+            display:inline-block;
+
             width:225px;
-
-            @include media ('<=min') {
-                height:385px;
-                margin:40px auto 0;
-            }
-
-            @include media ('>=max') {
-                height:414px;
-                margin-top:48px;
-                margin-left:12px;
-                float:left;
-            }
 
             text-align:center;
             background-color:#f2f5fc;
@@ -65,13 +46,11 @@ article .advisor {
                 font-weight:300;
                 padding:0 25px;
 
-                @include media ('<=min') {
+                font-size:rem(14);
+
+                @include media ('<400px') {
                     line-height:1.8;
                     font-size:rem(10);
-                }
-
-                @include media ('>=max') {
-                    font-size:rem(14);
                 }
 
             }
@@ -108,13 +87,12 @@ article .advisor {
 
         text-transform:uppercase;
 
-        @include media ('<=min') {
+        font-size:rem(16);
+
+        @include media ('<400px') {
             font-size:rem(12);
         }
 
-        @include media ('>=max') {
-            font-size:rem(16);
-        }
         font-weight:600;
         color:#4a4a4a;
         font-family:$em-font;
@@ -127,12 +105,10 @@ article .advisor {
             text-transform:Capitalize;
             margin:18px 0 4px;
 
-            @include media ('<=min') {
-                font-size:rem(10);
-            }
+            font-size:rem(14);
 
-            @include media ('>=max') {
-                font-size:rem(14);
+            @include media ('<400px') {
+                font-size:rem(10);
             }
         }
     }

@@ -1,7 +1,9 @@
 @charset 'UTF-8';
 
 article .more_info {
-    padding-top:48px;
+    .wrapper {
+        padding-top:48px;
+    }
 
     h2 {
         text-align:center;
@@ -14,20 +16,18 @@ article .more_info {
             font-family:$em-font;
             font-weight:500;
 
-            @include media ('<=min') {
+            margin-top:48px;
+            font-size:rem(20);
+            width:224px;
+            height:58px;
+            line-height:56px;
+
+            @include media ('<600px') {
                 margin-top:32px;
                 width:148px;
                 height:46px;
                 line-height:44px;
                 font-size:rem(16);
-            }
-
-            @include media ('>=max') {
-                margin-top:48px;
-                font-size:rem(20);
-                width:224px;
-                height:58px;
-                line-height:56px;
             }
 
         }
