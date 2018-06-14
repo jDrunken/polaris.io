@@ -1,0 +1,152 @@
+@charset 'UTF-8';
+
+// summary interaction
+.deco.ci.circle {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:linear-gradient(to right, #ccd0da 50%, #eaeffa);
+
+    animation:background 3s;
+
+    @keyframes background {
+        0% {
+            opacity:0;
+        }
+
+        100% {
+            opacity:1;
+        }
+    }
+
+    div {
+        position:absolute;
+        border-radius:100%;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+
+    .circle1 {
+        width:988px;
+        height:988px;
+        left:calc(50% - 270px);
+        transform:translate(0,-50%);
+        background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
+
+        animation:circle 2.5s;
+    }
+
+    .circle2 {
+        background:#e6ebf5;
+        box-shadow:0 0 100px #dfe4ee;
+        width:644px;
+        height:644px;
+
+        animation:circle 2s;
+    }
+
+    .circle3 {
+        background:#e7eaf2;
+        box-shadow:0 0 100px #dce1eb;
+        width:348px;
+        height:348px;
+
+        animation:circle 1.5s;
+
+    }
+    @keyframes circle {
+        0% {
+            opacity:0;
+        }
+
+        100% {
+            opacity:1;
+        }
+    }
+
+    @keyframes circle3_purse {
+        0% {
+            transform:scale(0.5);
+            opacity:1;
+        }
+
+
+        100% {
+            transform:scale(4);
+            opacity:0;
+        }
+    }
+
+    .ci {
+        background:url('../image/polaris-simbol-c@3x.png') left top no-repeat transparent;
+        background-size:cover;
+        width:240px;
+        height:240px;
+
+        animation:ci 1s;
+        &:after {
+            width:348px;
+            height:348px;
+            position:absolute;
+            top:0;
+            left:0;
+            background:#fff;
+            box-shadow:0 0 100px #dce1eb;
+            content:'';
+            border-radius:100%;
+            opacity:0;
+            transform:translate(-50%,-50%);
+
+            animation:circle3_purse 2s;
+        }
+    }
+    @keyframes ci {
+        0% {
+            opacity:0.5;
+            transform:translate(-50%,-50%) rotate(180deg);
+        }
+
+
+        100% {
+            opacity:1;
+            transform:translate(-50%,-50%) rotate(0deg);
+        }
+    }
+        @include media ('<700px') {
+        .circle1 {
+            transform:translate(-2%,-50%);
+        }
+    }
+    @include media ('<500px') {
+        .circle1 {
+            width:649px;
+            height:649px;
+            background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
+            top:auto;
+            left:auto;
+            bottom:-230px;
+            right:-230px;
+            transform:translate(0,0);
+        }
+
+        .circle2 {
+            width:423px;
+            height:423px;
+        }
+
+        .circle3 {
+            width:249px;
+            height:249px;
+        }
+
+        .ci {
+            width:150px;
+            height:150px;
+        }
+    }
+
+}
+

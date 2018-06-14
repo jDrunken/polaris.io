@@ -4,85 +4,7 @@ article .summary {
     overflow:hidden;
     position:relative;
 
-    // 인터랙션을 위해서 꾸밈
-    .deco.ci.circle {
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        background:linear-gradient(to right, #ccd0da 50%, #eaeffa);
-
-        div {
-            position:absolute;
-            border-radius:100%;
-            top:50%;
-            left:50%;
-            transform:translate(-50%,-50%);
-        }
-
-        .circle1 {
-            width:988px;
-            height:988px;
-            left:calc(50% - 270px);
-            transform:translate(0,-50%);
-            background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
-        }
-
-        .circle2 {
-            background:#e6ebf5;
-            box-shadow:0 0 100px #dfe4ee;
-            width:644px;
-            height:644px;
-        }
-
-        .circle3 {
-            background:#e7eaf2;
-            box-shadow:0 0 100px #dce1eb;
-            width:348px;
-            height:348px;
-        }
-
-        .ci {
-            background:url('../image/polaris-simbol-c@3x.png') left top no-repeat transparent;
-            background-size:cover;
-            width:240px;
-            height:240px;
-        }
-        @include media ('<700px') {
-            .circle1 {
-                transform:translate(-2%,-50%);
-            }
-        }
-        @include media ('<500px') {
-            .circle1 {
-                width:649px;
-                height:649px;
-                background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
-                top:auto;
-                left:auto;
-                bottom:-230px;
-                right:-230px;
-                transform:translate(0,0);
-            }
-
-            .circle2 {
-                width:423px;
-                height:423px;
-            }
-
-            .circle3 {
-                width:249px;
-                height:249px;
-            }
-
-            .ci {
-                width:150px;
-                height:150px;
-            }
-        }
-
-    }
+    @import 'article.summary.interaction.scss';
 
     .wrapper {
         position:relative;
@@ -123,6 +45,7 @@ article .summary {
         @include media ('<480px') {
             font-size:rem(24);
         }
+        animation:summary_title 1s;
     }
 
     a.button.middle {
@@ -145,9 +68,23 @@ article .summary {
             font-size:rem(16);
             margin-top:20px;
         }
+
+        animation:summary_title 1s;
     }
 
     .btn_area {
         text-align:left;
+    }
+}
+
+@keyframes summary_title {
+    0% {
+        transform:translateY(-30px);
+        opacity:0;
+    }
+
+    100% {
+        transform:translateY(0px);
+        opacity:1;
     }
 }
