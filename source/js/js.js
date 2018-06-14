@@ -94,3 +94,22 @@
 
 
 })(jQuery);
+
+
+// --------------------------------------------------------------------------------
+// advantage interaction
+// --------------------------------------------------------------------------------
+(function () {
+    $(document).on('scroll', function(e) {
+        var target = $('#advInteraction')
+        ,   startPosition = parseInt($(target).offset().top) - parseInt($(window).outerHeight())/2 - parseInt($(target).outerHeight())/2
+        ,   scrollPosition = parseInt($(window).scrollTop())
+        ;
+
+        if (startPosition <= scrollPosition) {
+            $(target).addClass('animate');
+        }
+
+    });
+
+})();

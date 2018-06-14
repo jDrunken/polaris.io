@@ -130,6 +130,7 @@ article .faq {
 
         a {
             padding:32px 0;
+            font-family:$em-font;
 
             @include media ('<500px') {
                 padding:16px 0;
@@ -156,7 +157,6 @@ article .faq {
             }
 
             &.viewing {
-                font-family:$em-font;
                 font-weight:600;
                 color:#4a4a4a;
 

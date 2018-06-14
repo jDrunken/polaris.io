@@ -41,7 +41,7 @@ header h1 a {
 
     @include ir();
 
-    width:123px;
+    width:120px;
     height:18px;
 
     @include media ('<450px') {
@@ -60,7 +60,7 @@ nav {
     }
 
     @include media ('<700px') {
-        $top:36px;
+        $top:20px;
         $left:32px;
         $right:20px;
         $bottom:24px;
@@ -69,7 +69,7 @@ nav {
         position:absolute;
         top:0;
         right:0;
-        max-height:425px;
+        max-height:100vh;
         height:100vh;
         background:#4a4a4a;
         width:254px;
@@ -83,11 +83,12 @@ nav {
         a {
             color:#ffffff;
             font-family:$em-font;
+            font-weight:300;
             display:block;
             margin-top:40px;
 
             &.ci + a {
-                margin-top:94px;
+                margin-top:calc(100vh / 2 - 11vh * 3);
             }
         }
 

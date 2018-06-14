@@ -19,15 +19,16 @@ article .advantage {
     }
 
     div.relationship_diagram {
-        margin:48px auto 32px;
-
+        margin:84px auto 32px;
         width:720px;
         height:409px;
-        position:relative;
 
-        & > div {
-            position:absolute;
+        @include media ('<850px') {
+            width:85vw;
+            height:48.284722222vw;
         }
+
+        position:relative;
 
         // 애니메이션이 너무 길어서 여기에 포함
         @import 'article.advantage.interaction.scss';
