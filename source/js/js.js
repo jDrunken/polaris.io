@@ -46,7 +46,7 @@
         }
 
         // 로딩시 바인딩
-        headerInteraction($('#header'),$(window),$('#summary'))
+        headerInteraction($('#header'),$(window),null);
 
         $(document).on('scroll', function(e) {
             headerInteraction($('#header'),$(window),null);
@@ -99,7 +99,7 @@
 // --------------------------------------------------------------------------------
 // advantage interaction
 // --------------------------------------------------------------------------------
-(function () {
+(function ($) {
     $(document).on('scroll', function(e) {
         var target = $('#advInteraction')
         ,   startPosition = parseInt($(target).offset().top) - parseInt($(window).outerHeight())/2 - parseInt($(target).outerHeight())/2
@@ -112,4 +112,19 @@
 
     });
 
-})();
+})(jQuery);
+
+// 모든 리소스가 로딩 된 후  설정
+(function ($) {
+    $('body').addClass('loading');
+    $(window).on('load',function () {
+        $('#barrior').addClass('remove').one("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+
+            // modal block 삭제
+            document.getElementById('barrior').outerHTML = '';
+
+            // body의 class 삭제
+            $('body').removeClass('loading').addClass('animate');
+        });
+    });
+})(jQuery);

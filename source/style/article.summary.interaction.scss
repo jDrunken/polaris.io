@@ -9,7 +9,9 @@
     bottom:0;
     background:linear-gradient(to right, #ccd0da 50%, #eaeffa);
 
-    animation:background 3s;
+    body.animate & {
+        animation:background 3s;
+    }
 
     @keyframes background {
         0% {
@@ -20,6 +22,7 @@
             opacity:1;
         }
     }
+
 
     div {
         position:absolute;
@@ -36,7 +39,9 @@
         transform:translate(0,-50%);
         background:linear-gradient(to right, #e2e7f1 40%, transparent 50%);
 
-        animation:circle 2.5s;
+        body.animate & {
+            animation:circle 2.5s;
+        }
     }
 
     .circle2 {
@@ -45,7 +50,6 @@
         width:644px;
         height:644px;
 
-        animation:circle 2s;
     }
 
     .circle3 {
@@ -53,9 +57,6 @@
         box-shadow:0 0 100px #dce1eb;
         width:348px;
         height:348px;
-
-        animation:circle 1.5s;
-
     }
     @keyframes circle {
         0% {
@@ -64,19 +65,6 @@
 
         100% {
             opacity:1;
-        }
-    }
-
-    @keyframes circle3_purse {
-        0% {
-            transform:scale(0.5);
-            opacity:1;
-        }
-
-
-        100% {
-            transform:scale(4);
-            opacity:0;
         }
     }
 
@@ -100,13 +88,12 @@
             opacity:0;
             transform:translate(-50%,-50%);
 
-            animation:circle3_purse 2s;
         }
     }
     @keyframes ci {
         0% {
             opacity:0.5;
-            transform:translate(-50%,-50%) rotate(180deg);
+            transform:translate(-50%,-50%) rotate(60deg);
         }
 
 

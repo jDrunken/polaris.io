@@ -69,7 +69,7 @@ article .summary {
             margin-top:20px;
         }
 
-        animation:summary_title 1s;
+        animation:summary_button 1s;
     }
 
     .btn_area {
@@ -85,6 +85,18 @@ article .summary {
 
     100% {
         transform:translateY(0px);
+        opacity:1;
+    }
+}
+
+@keyframes summary_button {
+    0% {
+        transform:translateX(-30px);
+        opacity:0;
+    }
+
+    100% {
+        transform:translateX(0px);
         opacity:1;
     }
 }

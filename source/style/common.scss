@@ -14,3 +14,44 @@ h2 {
         font-size:rem(18);
     }
 }
+
+.barrior {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 99; /* Higher than anything else in the document */
+    background-color:#fff;
+
+    &:after {
+        content:'';
+        position:absolute;
+        height:6px;
+        top:50%;
+        left:0;
+        right:0;
+        margin-top:-3px;
+
+        background: linear-gradient(270deg, #27b9fb, #b827fb);
+        background-size: 400% 400%;
+
+        animation: infinity 3s ease infinite;
+    }
+
+    transition:opacity 0.3s ease-in-out;
+
+    &.remove {
+        opacity:0;
+    }
+}
+
+body.loading {
+    overflow:hidden;
+}
+
+@keyframes infinity {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
