@@ -138,7 +138,9 @@ gulp.task('convert:sass:sourcemap', function () {
 
     return gulp.src(path.source.style + '/**/style.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({
+            outputStyle: 'expanded'
+        }))
         .on('error', function (err) {
             console.log(err.toString());
             this.emit('end');
@@ -156,7 +158,9 @@ gulp.task('convert:sass:sourcemap', function () {
 // scss 변환 :: deploy, sass > hack
 gulp.task('convert:sass', function () {
     return gulp.src(path.source.style + '/**/style.scss')
-        .pipe(sass())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'ie 10', 'ie 11'],
             expand: true,
