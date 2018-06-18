@@ -1,0 +1,104 @@
+@charset 'UTF-8';
+
+// 페이지 전환효과를 주기 위해서...
+body.posting section:not(.viewing) {
+    display:none;
+}
+
+section.policy,
+section.term,
+section.disclimer {
+    opacity:0;
+    height:0;
+    transition:opacity 2s;
+
+    @include ir();
+
+    &.viewing {
+        opacity:1;
+        height:auto;
+        text-indent:0;
+    }
+
+    background-image: linear-gradient(to right, #ccd0da, #eaeffa);
+
+    @include media ('<700px') {
+        padding-top:60px;
+    }
+
+    h2 {
+        font-family:$em-font;
+        font-weight:500;
+
+        @include media ('<700px') {
+            text-align:center;
+        }
+
+        @include media ('<700px') {
+            & + * {
+                margin-top:50px;
+            }
+        }
+    }
+
+    h3 {
+        color:#5c5c5c;
+        margin-top:49px;
+        font-weight:600;
+
+        &:first-letter {
+            text-transform:uppercase;
+        }
+
+        font-size:rem(16);
+
+        @include media ('<500px') {
+            font-size:rem(13);
+        }
+    }
+
+    p,ul,ol,dl {
+        color:#5c5c5c;
+        line-height:1.625;
+        margin-bottom:2em;
+
+        @include media ('<500px') {
+            font-size:rem(12);
+        }
+    }
+
+    dl {
+        margin:1.5em 0;
+
+        dt {
+            margin-bottom:1em;
+        }
+        dd {
+            $padding:1.2em;
+
+            margin-top:0.3em;
+            padding-left:$padding;
+            &:before {
+                display:inline-block;
+                box-sizing:border-box;
+                width:$padding;
+                margin-left:-$padding;
+                content:'*';
+            }
+        }
+    }
+    ol,ul {
+        margin-left:0;
+        padding-left:0;
+        li {
+            margin-left:1.6em;
+            margin-bottom:0.4em;
+            padding-left:0.4em;
+        }
+    }
+
+    a {
+        color:inherit;
+        text-decoration:underline;
+    }
+}

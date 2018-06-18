@@ -6,6 +6,11 @@ article .summary {
 
     @import 'article.summary.interaction.scss';
 
+    visibility:hidden;
+    body.animate & {
+        visibility:visible;
+    }
+
     .wrapper {
         position:relative;
         box-sizing:border-box;
@@ -45,7 +50,10 @@ article .summary {
         @include media ('<480px') {
             font-size:rem(24);
         }
-        animation:summary_title 1s;
+
+        body.animate & {
+            animation:summary_title 1s;
+        }
     }
 
     a.button.middle {
@@ -68,8 +76,10 @@ article .summary {
             font-size:rem(16);
             margin-top:20px;
         }
+        body.animate & {
+            animation:summary_button 1s;
+        }
 
-        animation:summary_button 1s;
     }
 
     .btn_area {

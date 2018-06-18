@@ -31,6 +31,9 @@ article .advisor {
             display:inline-block;
 
             width:225px;
+            @include media('<504px') {
+                width:280px;
+            }
 
             text-align:center;
             background-color:#f2f5fc;
@@ -65,6 +68,10 @@ article .advisor {
         background:#aaa;
         display:block;
         width:225px;
+
+        @include media('<504px') {
+            width:280px;
+        }
         height:141px;
         position:relative;
 

@@ -5,8 +5,11 @@
 }
 
 &.animate > div {
-    visibility:visible;
     position:absolute;
+
+    body.animate & {
+        visibility:visible;
+    }
 
     // banner의 축약어 b...
     b {
@@ -53,16 +56,21 @@
         background:url('../image/icon-adv-line@2x.png') center center no-repeat transparent;
         background-size:contain;
 
-        animation-duration: 0.5s;
-        animation-name: schematic;
+        body.animate & {
+            animation-duration: 0.5s;
+            animation-name: schematic;
+        }
+
 
         b {
             top:40.5%;
             left:-4.5555%;
             background-image: linear-gradient(to right, #31bff8, #588ef8);
 
-            animation-duration: 1.5s;
-            animation-name:label_schematic;
+            body.animate & {
+                animation-duration: 1.5s;
+                animation-name:label_schematic;
+            }
         }
     }
 
@@ -107,8 +115,10 @@
         background:url('../image/icon-adv-mainblock@2x.png') center center no-repeat transparent;
         background-size:contain;
 
-        animation-duration: 1s;
-        animation-name: private;
+        body.animate & {
+            animation-duration: 1s;
+            animation-name: private;
+        }
 
         top:12.71393%;
         left:25%;
@@ -118,8 +128,10 @@
             left:62%;
             background-image: linear-gradient(to left, #8561f7, #b827fb);
 
-            animation-duration: 1.5s;
-            animation-name:label_private;
+            body.animate & {
+                animation-duration: 1.5s;
+                animation-name:label_private;
+            }
         }
     }
 
@@ -182,15 +194,19 @@
         top:2.6894%;
         left:14.7222%;
 
-        animation-duration: 1.5s;
-        animation-name: user_left_top;
+        body.animate & {
+            animation-duration: 1.5s;
+            animation-name: user_left_top;
+        }
 
         b {
             top:-10%;
             left:-15%;
             background-image: linear-gradient(to right, #31bff8, #588ef8);
-            animation-duration: 1.5s;
-            animation-name:label_left_top;
+            body.animate & {
+                animation-duration: 1.5s;
+                animation-name:label_left_top;
+            }
         }
     }
 
@@ -232,16 +248,20 @@
         bottom:11.2469%;
         left:15.4166667%;
 
-        animation-duration: 1.5s;
-        animation-name: user_left_bottom;
+        body.animate & {
+            animation-duration: 1.5s;
+            animation-name: user_left_bottom;
+        }
 
         b {
             bottom:-19%;
             right:23%;
             background-image: linear-gradient(to right, #31bff8, #588ef8);
 
-            animation-duration: 1.5s;
-            animation-name:label_left_bottom;
+            body.animate & {
+                animation-duration: 1.5s;
+                animation-name:label_left_bottom;
+            }
         }
     }
 
@@ -283,15 +303,19 @@
         bottom:10.75794%;
         right:14.16666%;
 
-        animation-duration: 1.5s;
-        animation-name: user_right_bottom;
+        body.animate & {
+            animation-duration: 1.5s;
+            animation-name: user_right_bottom;
+        }
 
         b {
             top:63%;
             left:59%;
             background-image: linear-gradient(to left, #8561f7, #b827fb);
-            animation-duration: 1.5s;
-            animation-name:label_right_bottom;
+            body.animate & {
+                animation-duration: 1.5s;
+                animation-name:label_right_bottom;
+            }
         }
     }
 
@@ -336,15 +360,19 @@
         top:3.667481%;
         right:14.166666%;
 
-        animation-duration: 1.5s;
-        animation-name: user_right_top;
+        body.animate & {
+            animation-duration: 1.5s;
+            animation-name: user_right_top;
+        }
 
         b {
             top:-5%;
             right:-30%;
             background-image: linear-gradient(to left, #8561f7, #b827fb);
-            animation-duration: 1.5s;
-            animation-name:label_right_top;
+            body.animate & {
+                animation-duration: 1.5s;
+                animation-name:label_right_top;
+            }
         }
     }
 
@@ -389,8 +417,10 @@
         top:31.295843%;
         left:39.305555%;
 
-        animation-duration: 1.5s;
-        animation-name: center_block;
+        body.animate & {
+            animation-duration: 1.5s;
+            animation-name: center_block;
+        }
     }
 
     @keyframes center_block {
@@ -416,8 +446,10 @@
         left:39.305555%;
         background-image:url('../image/icon-adv-info@2x.png');
 
-        animation-duration: 1.5s;
-        animation-name: center_panel;
+        body.animate & {
+            animation-duration: 1.5s;
+            animation-name: center_panel;
+        }
     }
 
 

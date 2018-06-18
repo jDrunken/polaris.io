@@ -16,13 +16,13 @@ article {
 
 article {
 
-    @include media('<=min') {
-        padding-bottom:96px;
-    }
+    // @include media('<=min') {
+    //     padding-bottom:96px;
+    // }
 
-    @include media('>=max') {
-        padding-bottom:177px;
-    }
+    // @include media('>=max') {
+    //     padding-bottom:177px;
+    // }
 
     > section {
         box-sizing:border-box;
