@@ -1,6 +1,146 @@
-@charset 'UTF-8';
 
-article.contact {
-    .wrapper {
+section.contact {
+    background-color:#ccd0da;
+
+    fieldset {
+        font-family:$em-font;
+        font-size:rem(16);
+        font-weight:300;
+        color:#3c3c3c;
+
+        display:block;
+
+        margin:0;
+        padding:0 75px;
+
+        box-sizing:border-box;
+
+        @include media ('<500px') {
+            padding:0 20px;
+            font-size:rem(12);
+        }
+
+        legend {
+            @include ir();
+        }
+    }
+
+    ul,li {
+        margin:0;
+        padding:0;
+        list-style-type:none;
+    }
+
+    $height:48px;
+
+    li {
+        position:relative;
+        margin-top:20px;
+
+        label {
+            position:absolute;
+            top:17px;
+            transition:all 0.15s ease-out;
+        }
+
+        label[required]:after {
+            content:'*';
+            margin-left:0.1em;
+            color:rgba(0,0,0,0.4);
+        }
+
+        label.focused {
+            transform:translateY(-180%);
+            font-weight:400;
+            font-size:0.75em;
+        }
+
+        label.focused + input{
+            border-color:#000;
+        }
+    }
+
+    %field {
+        font-size:inherit;
+        font-family:inherit;
+        color:inherit;
+
+        width:100%;
+
+        background-color:transparent;
+        border-width:0;
+        border-bottom:1px solid #979797;
+
+        outline:0;
+        box-sizing:border-box;
+
+        padding:0.33333em 0;
+        box-sizing:border-box;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'] {
+        @extend %field;
+
+        display:inline-block;
+        height:3em;
+        line-height:2.9999em;
+    }
+
+    textarea {
+        @extend %field;
+
+        min-height:3em;
+        // resize:none;
+        resize:vertical;
+        overflow-y:hidden;
+        line-height:1.6;
+
+
+        &:focus {
+            border-color:#000;
+        }
+    }
+
+    button[type='submit'] {
+        display:block;
+        box-sizing:border-box;
+        border:1px solid #4a4a4a;
+
+        margin:49px auto 0;
+
+        width:224px;
+        height:58px;
+        line-height:56px;
+
+        @include media ('<600px') {
+            margin-top:32px;
+            width:148px;
+            height:46px;
+            line-height:44px;
+            font-size:rem(16);
+        }
+
+        background-color:transparent;
+
+        font-size:inherit;
+        color:inherit;
+
+        transition:all 0.3s;
+
+        font-family:$em-font;
+        font-size:rem(20);
+        font-weight:
+
+        &:hover {
+            background:#4a4a4a;
+            color:#fff;
+        }
+    }
+
+    // spam을 빠져죽게 하는 꿀단지
+    #honeypot {
+        display:none;
     }
 }

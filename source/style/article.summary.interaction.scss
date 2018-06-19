@@ -42,6 +42,44 @@
         body.animate & {
             animation:circle 2.5s;
         }
+
+        &:after {
+            content:'';
+            width:348px;
+            height:348px;
+            position:absolute;
+            box-shadow:0 0 50px rgba(255,255,255,0.5);
+            // background:#fff;
+            content:'';
+            border-radius:100%;
+
+            top:50%;
+            left:50%;
+            margin:-174px 0 0 -174px;
+            opacity:0;
+            transform-origin:center center;
+
+            body.animate & {
+                animation-name: pulse;
+                animation-duration:3.5s;
+                animation-delay:0.4s;
+                animation-iteration-count:3;
+            }
+        }
+
+    @keyframes pulse {
+        0% {
+            transform:scale(1);
+            opacity:1;
+            transform-origin:center center;
+        }
+
+        100% {
+            transform:scale(3.3);
+            opacity:0;
+        }
+    }
+
     }
 
     .circle2 {
@@ -77,21 +115,6 @@
 
         body.animate & {
             animation:ci 1s;
-        }
-
-        &:after {
-            width:348px;
-            height:348px;
-            position:absolute;
-            top:0;
-            left:0;
-            background:#fff;
-            box-shadow:0 0 100px #dce1eb;
-            content:'';
-            border-radius:100%;
-            opacity:0;
-            transform:translate(-50%,-50%);
-
         }
     }
     @keyframes ci {

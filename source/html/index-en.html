@@ -475,7 +475,61 @@ Source : <a href="https://developers.eos.io/eosio-home/docs/what-is-eos">https:/
 
 <!-- @@block = contact -->
 <h2>Contact Us</h2>
+    <!-- change the form action to your script url -->
+ <form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbzTlpLx1bfhteRa7H4BC8g_MYkH3UDvE0cruk9p/exec">
+    <!-- change the form action to your script url -->
+      <!-- <label for="name">Name: </label> -->
+      <!-- <input id="name" name="name" placeholder="What your Mom calls you" /> -->
+
+      <!-- <label for="message">Message: </label> -->
+      <!-- <textarea id="message" name="message" rows="10" -->
+      <!-- placeholder="Tell us what's on your mind..."></textarea> -->
+
+      <!-- <label for="email"><em>Your</em> Email Address:</label> -->
+      <!-- <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com"/> -->
+      <!-- <span id="email-invalid" style="display:none"> -->
+      <!--   Must be a valid email address</span> -->
+
+      <!-- <label for="color">Favourite Color: </label> -->
+      <!-- <input id="color" name="color" placeholder="green" /> -->
+
+    <fieldset>
+        <legend>please insert information to contact us</legend>
+        <ul>
+            <li>
+                <label for="firstName" required>First Name</label>
+                <input type="text" name="firstName" id="firstName">
+            </li>
+            <li>
+                <label for="lastName" required>Last Name</label>
+                <input type="text" name="lastName" id="lastName">
+            </li>
+            <li>
+                <label for="company" required>Company</label>
+                <input type="text" name="company" id="company">
+            </li>
+            <li>
+                <label for="emailAddress" required>Work E-mail</label>
+                <input type="email" name="email" id="emailAddress">
+                <span id="email-invalid" style="display:none"></span>
+                <!--   Must be a valid email address</span> -->
+            </li>
+            <li>
+                <label for="phoneNumber" required>Phone Number</label>
+                <input type="tel" name="phone" id="phoneNumber">
+            </li>
+            <li>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="2"></textarea>
+            </li>
+        </ul>
+        <input id="honeypot" type="text" name="honeypot" value="" />
+        <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+
 <!-- @@close -->
+
 
 <!-- @@block = footer -->
 <h2>Polaris</h2>

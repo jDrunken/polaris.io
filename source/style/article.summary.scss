@@ -7,6 +7,7 @@ article .summary {
     @import 'article.summary.interaction.scss';
 
     visibility:hidden;
+
     body.animate & {
         visibility:visible;
     }
@@ -35,7 +36,7 @@ article .summary {
 
     h2 {
         font-family:$em-font;
-        font-weight:400;
+        font-weight:600;
         color:#4a4a4a;
 
         font-size:rem(44);
