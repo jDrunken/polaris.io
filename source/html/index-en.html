@@ -497,30 +497,30 @@ Source : <a href="https://developers.eos.io/eosio-home/docs/what-is-eos">https:/
         <legend>please insert information to contact us</legend>
         <ul>
             <li>
-                <label for="firstName" required>First Name</label>
-                <input type="text" name="firstName" id="firstName">
+                <label for="firstName" class="required">First Name</label>
+                <input type="text" name="firstName" id="firstName" required>
             </li>
             <li>
-                <label for="lastName" required>Last Name</label>
-                <input type="text" name="lastName" id="lastName">
+                <label for="lastName" class="required">Last Name</label>
+                <input type="text" name="lastName" id="lastName" required>
             </li>
             <li>
-                <label for="company" required>Company</label>
-                <input type="text" name="company" id="company">
+                <label for="company" class="required">Company</label>
+                <input type="text" name="company" id="company" required>
             </li>
             <li>
-                <label for="emailAddress" required>Work E-mail</label>
-                <input type="email" name="email" id="emailAddress">
-                <span id="email-invalid" style="display:none"></span>
+                <label for="emailAddress" class="required">Work E-mail</label>
+                <input type="email" name="email" id="emailAddress" required placeholder="example@email.com">
+                <span id="email-invalid" style="display:none">이메일이 맞질 않네유..</span>
                 <!--   Must be a valid email address</span> -->
             </li>
             <li>
-                <label for="phoneNumber" required>Phone Number</label>
-                <input type="tel" name="phone" id="phoneNumber">
+                <label for="phoneNumber" class="required">Phone Number</label>
+                <input type="tel" name="phone" id="phoneNumber" required>
             </li>
             <li>
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="2"></textarea>
+                <textarea id="message" name="message" rows="1"></textarea>
             </li>
         </ul>
         <input id="honeypot" type="text" name="honeypot" value="" />

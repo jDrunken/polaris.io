@@ -263,15 +263,6 @@
                 $(this).prev('label').removeClass('focused')
             }
         });
-
-        // textarea.keydown(function () {
-        //     $(this).css({
-        //         'height':'auto',
-        //     });
-        //     $(this).height(this.scrollHeight );
-        // });
-
-
     });
 })(jQuery);
 
@@ -391,7 +382,6 @@ function loaded() {
     var form = document.getElementById("gform");
     form.addEventListener("submit", handleFormSubmit, false);
 };
-document.addEventListener("DOMContentLoaded", loaded, false);
 
 function disableAllButtons(form) {
     var buttons = form.querySelectorAll("button");
@@ -399,4 +389,5 @@ function disableAllButtons(form) {
         buttons[i].disabled = true;
     }
 }
-//
+
+document.addEventListener("DOMContentLoaded", loaded, false);

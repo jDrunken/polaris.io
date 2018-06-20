@@ -43,7 +43,7 @@ section.contact {
             transition:all 0.15s ease-out;
         }
 
-        label[required]:after {
+        label.required:after {
             content:'*';
             margin-left:0.1em;
             color:rgba(0,0,0,0.4);
@@ -55,9 +55,7 @@ section.contact {
             font-size:0.75em;
         }
 
-        label.focused + input{
-            border-color:#000;
-        }
+
     }
 
     %field {
@@ -76,6 +74,21 @@ section.contact {
 
         padding:0.33333em 0;
         box-sizing:border-box;
+
+        &::placeholder {
+            color:transparent;
+            transition:color 1s;
+        }
+
+        &:focus {
+            border-color:#000;
+            &::placeholder {
+                color:#aaa;
+            }
+            &:invalid {
+                border-bottom-color:#ed1c24;
+            }
+        }
     }
 
     input[type='text'],
@@ -83,6 +96,9 @@ section.contact {
     input[type='tel'] {
         @extend %field;
 
+        &::placeholder {
+            color:transparent;
+        }
         display:inline-block;
         height:3em;
         line-height:2.9999em;
@@ -91,16 +107,11 @@ section.contact {
     textarea {
         @extend %field;
 
-        min-height:3em;
-        // resize:none;
+        min-height:48px;
         resize:vertical;
         overflow-y:hidden;
         line-height:1.6;
-
-
-        &:focus {
-            border-color:#000;
-        }
+        padding-top:0.6em;
     }
 
     button[type='submit'] {
@@ -131,7 +142,12 @@ section.contact {
 
         font-family:$em-font;
         font-size:rem(20);
-        font-weight:
+        font-weight:500;
+
+        &::selection {
+            color:inherit;
+            background:transparent;
+        }
 
         &:hover {
             background:#4a4a4a;
