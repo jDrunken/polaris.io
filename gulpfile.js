@@ -1,50 +1,47 @@
 // plugin
-var gulp              = require('gulp')
+var gulp = require('gulp')
 
     // server + live-reload
-	connect           = require('gulp-connect'),
-    livereload        = require('gulp-livereload'),
+	connect = require('gulp-connect'),
+    livereload = require('gulp-livereload'),
 
     // html template
     extender = require('gulp-html-extend')
 
     // image minify
-    imagemin          = require('gulp-imagemin'),
+    imagemin = require('gulp-imagemin'),
 
     // task run sequancial
-    runSequence       = require('run-sequence'),
+    runSequence = require('run-sequence'),
 
     // clean before running
-    clean             = require('del'),
+    clean = require('del'),
 
     // styling
-	sass              = require('gulp-sass'),
+	sass = require('gulp-sass'),
 
     // for cross browsing
-	autoprefixer      = require('gulp-autoprefixer'),
+	autoprefixer = require('gulp-autoprefixer'),
 
     // source tracking
-	sourcemaps        = require('gulp-sourcemaps'),
-
-    // simple html template
-    extender          = require('gulp-html-extend')
+	sourcemaps = require('gulp-sourcemaps'),
 
     // comment remove
     removeHtmlComment = require('gulp-remove-html-comments'),
 
     // get node_modules to build
-    npmDist           = require('gulp-npm-dist'),
+    npmDist = require('gulp-npm-dist'),
 
     // change path name
-    rename            = require('gulp-rename'),
+    rename = require('gulp-rename'),
 
     // gulp-gh-pages
-    publish           = require('gulp-gh-pages'),
+    publish = require('gulp-gh-pages'),
 
     // image inliner(for slow network)
-    base64            = require('gulp-base64'),
+    base64 = require('gulp-base64'),
 
-    imagemin          = require('gulp-imagemin')
+    imagemin = require('gulp-imagemin')
 ;
 
 
@@ -303,9 +300,14 @@ gulp.task('release', function () {
     return gulp.src(path.deploy + '/**/*')
         .pipe(publish({
             force : true,
-            message : 'EOSYS.io :: 깃허브 페이지에 반영됨. Published to Github pages'
+            message : 'Polaris.io :: 깃허브 페이지에 반영됨. Published to Github pages'
         }))
 });
+
+
+
+
+
 // --------------------------------------------------------------------------------
 // pipe running
 // --------------------------------------------------------------------------------
